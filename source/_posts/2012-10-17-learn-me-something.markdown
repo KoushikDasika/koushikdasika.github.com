@@ -49,5 +49,19 @@ is the questions that you asked, but do not have any responses yet.
 4) If the question that you wanted does not exist, just create one of your own.  For now, users have to tag their questions
 with their own discretion.  We will make it smarter in the future with autocomplete and suggestions.
 
-{% img /assets/images/question.png %}
+{% img /assets/images/answeredquestion.png %}
 5) Once you created a question, you can view it.  Once answered, you will see the responses. 
+
+
+{% img /assets/images/goal.png %}
+6) A successful thread.  The goal is to eventually have a community driven tutorial site.
+There are so many tutorials on the internet and we want to be the place that gathers them.
+There are millions of tutorials for commonly studied subjects like Calculus, but what if you
+needed a lesson on finding closed form sums for hypergeometric series.  This would be the place
+to ask.
+
+We are very excited about this project and we will definitely flesh it out.
+We are well aware of the flaws of the site as it is, but bear in mind that we cranked it out in less than 36 hours.
+Please visit Learnmesometh.in frequently.
+
+
