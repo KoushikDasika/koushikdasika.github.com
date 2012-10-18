@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Koushik Dasika]]></title>
+  <link href="http://KoushikDasika.github.com/atom.xml" rel="self"/>
+  <link href="http://KoushikDasika.github.com/"/>
+  <updated>2012-10-18T17:06:38-04:00</updated>
+  <id>http://KoushikDasika.github.com/</id>
+  <author>
+    <name><![CDATA[Koushik Dasika]]></name>
+    <email><![CDATA[kdasika@koushikdasika.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Learn Me Something]]></title>
+    <link href="http://KoushikDasika.github.com/blog/2012/10/17/learn-me-something/"/>
+    <updated>2012-10-17T15:59:00-04:00</updated>
+    <id>http://KoushikDasika.github.com/blog/2012/10/17/learn-me-something</id>
+    <content type="html"><![CDATA[<p>Learn Me Something was a hackathon project that was submitted for the 2012 Rails Rumble hackathon.
+The idea came to me at 4:30 am on October 7, when I was thinking about how I had to tutor a student on limits.
+I immediately turned on my laptop, and opened up a Google Doc to write down my thoughts.
+Here was the elevator speech that I thought up for it.</p>
+
+<blockquote><p>Education on the web has a huge disconnect today. On one end, there are people with questions that need answering, and a lack of quality content to satisfy their needs. On the other end are aspiring content creators with vast pools of knowledge, but no idea where to start. Learn Me Something smashes these two groups of people together. Now people can request full lessons about certain topics and subjects, and content creators can find their audience.</p><p>How are we different from StackOverflow, RailsCasts, or Quora? <br/>     Learn Me Something differs from StackOverflow in that it encourages answerers to create their own fleshed-out content rather than providing quick answers to questions. Our users’ responses will be focused on original content for video tutorials or blog posts. StackOverflow is more about bug fixes of specific portions of code. We’re more about providing more complete lessons on subjects rather than just specific answers to specific questions. </p><p>     Railscasts, Khan Academy, or even Code Academy are great services, but they are run individuals or startups who only have the capability of releasing a limited amount of content at any time. We let our users decide what kinds of tutorials they want, and judge the quality of the responses to their questions. Learn Me Something will also cater to a wide range of topics that are not just tech related. We want to be the one stop source for FAQs, tutorials, and open source education. Bloggers and tutorial video makers will know what topics are in great demand, and they will also have an idea of who and where their audience is.</p></blockquote>
+
+
+<p>I started thinking about what my strengths were as a developer and who among my friends would complement my skills.
+I am primarily good with backend development and so I would need help with front end.  My friends, Dan Mundy, a great front end developer,
+Russ Frank, a super skilled systems and mobile developer, and Mike Swift, full-stack developer and all around boss, liked the idea.</p>
+
+<p>The competition started on Friday, October 12th at 8pm for us; officially it started October 13th at 12am UTC so.  We did not actually begin
+development until the next morning, when the team was able to get together.  So we had about 36 hours to get it together.  We were also
+attending HackRU, a hackathon hosted by Rutgers, because Swift is a developer evangelist for Sendgrid, so both he and Russ Frank were super
+busy mentoring Rutgers hackers.  How they managed to still do a ton of work for us is a testament to their abilities.</p>
+
+<p>So here is a run through of how to use LearnMeSomthin right now.</p>
+
+<p><img src="http://KoushikDasika.github.com/assets/images/homepage.png"></p>
+
+<p>1) This is what you see on the homepage.  Search asked questions bar will give you a list of
+questions and requests already in the system.  From there you can click on a question to view its responses.
+For right now, because its a bit buggy, its best to sign up.</p>
+
+<p><img src="http://KoushikDasika.github.com/assets/images/signup.png">
+2) A Signup page.  We will eventually have a email confirmation module running.</p>
+
+<p><img src="http://KoushikDasika.github.com/assets/images/loggedin.png">
+3)  Once logged in, you can really get going.  You can check out questions.  The Pending questions bar on the side
+is the questions that you asked, but do not have any responses yet.</p>
+
+<p><img src="http://KoushikDasika.github.com/assets/images/newquestion.png">
+4) If the question that you wanted does not exist, just create one of your own.  For now, users have to tag their questions
+with their own discretion.  We will make it smarter in the future with autocomplete and suggestions.</p>
+
+<p><img src="http://KoushikDasika.github.com/assets/images/answeredquestion.png">
+5) Once you created a question, you can view it.  Once answered, you will see the responses.</p>
+
+<p><img src="http://KoushikDasika.github.com/assets/images/goal.png">
+6) A successful thread.  The goal is to eventually have a community driven tutorial site.
+There are so many tutorials on the internet and we want to be the place that gathers them.
+There are millions of tutorials for commonly studied subjects like Calculus, but what if you
+needed a lesson on finding closed form sums for hypergeometric series.  This would be the place
+to ask.</p>
+
+<p>We are very excited about this project and we will definitely flesh it out.
+We are well aware of the flaws of the site as it is, but bear in mind that we cranked it out in less than 36 hours.
+Please visit Learnmesometh.in frequently.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Resume]]></title>
+    <link href="http://KoushikDasika.github.com/blog/2012/10/16/resume/"/>
+    <updated>2012-10-16T03:29:00-04:00</updated>
+    <id>http://KoushikDasika.github.com/blog/2012/10/16/resume</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
