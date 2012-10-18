@@ -4,7 +4,7 @@
   <title><![CDATA[Koushik Dasika]]></title>
   <link href="http://KoushikDasika.github.com/atom.xml" rel="self"/>
   <link href="http://KoushikDasika.github.com/"/>
-  <updated>2012-10-18T18:29:19-04:00</updated>
+  <updated>2012-10-18T18:42:28-04:00</updated>
   <id>http://KoushikDasika.github.com/</id>
   <author>
     <name><![CDATA[Koushik Dasika]]></name>
@@ -67,6 +67,15 @@ to ask.</p>
 <p>We are very excited about this project and we will definitely flesh it out.
 We are well aware of the flaws of the site as it is, but bear in mind that we cranked it out in less than 36 hours.
 Please visit Learnmesometh.in frequently.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Resume]]></title>
+    <link href="http://KoushikDasika.github.com/blog/2012/10/16/resume/"/>
+    <updated>2012-10-16T03:29:00-04:00</updated>
+    <id>http://KoushikDasika.github.com/blog/2012/10/16/resume</id>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
