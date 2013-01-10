@@ -25,3 +25,17 @@ sub {
   font-size: 10px;
 }
 
+#cost, #dimension {
+  display: inline-block;
+  width: 45%;
+  margin-bottom: 5%;
+}
+
+#problem {
+  margin-bottom: 3%;
+}
+
+#calculations td {
+  width: auto;
+  height: auto;
+}
