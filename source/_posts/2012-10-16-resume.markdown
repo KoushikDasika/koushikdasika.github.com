@@ -1,7 +1,0 @@
----
-layout: post
-title: "Resume"
-date: 2012-10-16 03:29
-comments: true
-categories: 
----

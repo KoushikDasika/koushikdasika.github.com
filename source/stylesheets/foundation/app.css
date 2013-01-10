@@ -1,29 +1,27 @@
-/* Artfully masterminded by ZURB  */
+li {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+}
+td {
+  width: 3em;
+  height 3em;
+  vertical-align: center;
+  text-align: center;
+}
 
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
+th {
+  width: 3em;
+  height 3em;
+  vertical-align: top;
+  text-align: center;
+}
 
+table, th, td {
+  border: 1px solid black;
+}
 
-/* -----------------------------------------
-   Shared Styles
------------------------------------------ */
-
-
-
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
-
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
-
+sub {
+  font-size: 10px;
+}
 
