@@ -40,7 +40,7 @@ categories: Math, Algorithms
       There are multiple sources online with great proofs, source code,
       and explaination of the proofs, but I did not find an example problem that
       I felt was easy to understand and follow.
-      I hope that the proofs become much easier to understand having seen this problem.
+      I hope that the proofs become much easier to understand after seeing this problem worked out.
     </p>
     <p>
       You may be wondering "What is my motivation for doing this problem using <em>Dynamic Programming</em>
