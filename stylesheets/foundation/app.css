@@ -1,0 +1,47 @@
+li {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+}
+td {
+  width: 3em;
+  height 3em;
+  vertical-align: center;
+  text-align: center;
+}
+
+th {
+  width: 3em;
+  height 3em;
+  vertical-align: top;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+sub {
+  font-size: 10px;
+}
+
+#cost, #dimension {
+  display: inline-block;
+  width: 45%;
+  margin-bottom: 3%;
+}
+
+#problem {
+  margin-bottom: 3%;
+}
+
+
+#calculations td {
+  width: 10em;
+  height: auto;
+}
+
+#calculations {
+  margin-bottom: 1%;
+}
+
