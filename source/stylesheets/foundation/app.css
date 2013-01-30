@@ -28,14 +28,20 @@ sub {
 #cost, #dimension {
   display: inline-block;
   width: 45%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 #problem {
   margin-bottom: 3%;
 }
 
+
 #calculations td {
-  width: auto;
+  width: 10em;
   height: auto;
 }
+
+#calculations {
+  margin-bottom: 1%;
+}
+
