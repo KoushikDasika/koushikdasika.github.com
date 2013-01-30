@@ -899,25 +899,3 @@ categories: Math, Algorithms
     </p>
   </div>
 </div>
-
-
-<p>
-  The purpose of this post is to show a fully worked out example
-  of Chain Matrix Multiplication using dynamic programming, a fancy
-  term for breaking a big problem down into subproblems.
-</p>
-<p>
-  There are multiple sources online with great proofs, source code,
-  and explaination of those proofs, but I did not find an example problem that
-  I felt was easy to understand and follow.
-  I hope that the proofs become much easier to understand having seen this problem.
-</p>
-<p>
-  You may be wondering "What is my motivation for doing this problem using <em>Dynamic Programming</em>
-  when I could just as easily multiply the matricies in order and be done with it?".  Well, suppose that
-  the matricies are really big; as in, each matrix was a couple of hundred columns and rows.
-  Ordinary matrix multiplication is an Θ(n<sup>3</sup>) operation, so it will take many operations.
-  It just so happens that the order in which you multiply matricies makes a huge difference in the number of
-  calculations you have to do.  That's why we look for the optimal order (technical term is factorization)  of multiplication.
-</p>
-
