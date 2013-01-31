@@ -47,16 +47,16 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </p>
     <p>
       There are multiple sources online with great proofs, source code,
-      and explaination of the proofs, but I did not find an example problem that
+      and explanation of the proofs, but I did not find an example problem that
       I felt was easy to understand and follow.
       I hope that the proofs become much easier to understand after seeing this problem worked out.
     </p>
     <p>
       You may be wondering "What is my motivation for doing this problem using <em>Dynamic Programming</em>
-      when I could just as easily multiply the matricies in order and be done with it?".  Well, suppose that
-      the matricies are really big; as in, each matrix was a couple of hundred columns and rows.
+      when I could just as easily multiply the matrices in order and be done with it?".  Well, suppose that
+      the matrices are really big; as in, each matrix was a couple of hundred columns and rows.
       Ordinary matrix multiplication is an Θ(n<sup>3</sup>) operation, so it will take many operations.
-      It just so happens that the order in which you multiply matricies makes a huge difference in the number of
+      It just so happens that the order in which you multiply matrices makes a huge difference in the number of
       calculations you have to do.  That's why we look for the optimal order (technical term is factorization)  of multiplication.
     </p>
   </div>
@@ -64,9 +64,9 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     <h2> Preliminaries </h2>
     <h4>Notation</h4>
     <ul>
-      <li>The symbol '×' will be used to signify multiplying two matricies together.</li>
+      <li>The symbol '×' will be used to signify multiplying two matrices together.</li>
       <li>The symbol '<symbol>&#8901</symbol>' will be used to signify multiplying two integers together.</li>
-      <li>Z<sub>a,b</sub> will be used to signify the cost of multiplying all the matricies
+      <li>Z<sub>a,b</sub> will be used to signify the cost of multiplying all the matrices
       from Matrix a to Matrix b together in the optimal order.</li>
     </ul>
   </div>
@@ -78,7 +78,7 @@ If you would prefer reading the post as a contiguous block rather than a slide s
       where A is a matrix with p rows and q columns and B is a matrix with q rows and r columns.</li>
       <li>Matrix multiplication is associative, so A × (B × C) == (A × B) × C.</li>
       <li>Multiplying A<sub>p x q</sub> × B<sub>q x r</sub> will yield the matrix C<sub> p x r</sub>.</li>
-      <li>For matricies A and B, A × B <symbol>&#8800</symbol> B × A</li>
+      <li>For matrices A and B, A × B <symbol>&#8800</symbol> B × A</li>
     </ul>
   </div>
   <div>
@@ -113,11 +113,11 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </div>
     <br />
     <p>
-      We will use this table to keep track of the cost of multiplying matricies.
+      We will use this table to keep track of the cost of multiplying matrices.
       Notice that the diagonals are all 0; it's because we won't be multiplying a matrix
       by itself.  The boxes with hyphens will be ignored because matrix multiplication works
       from left to right, not the other way around.  Element Z<sub>a,b</sub> in the table
-      will be the cost of multiplying all the matricies between a and b.  Getting the 
+      will be the cost of multiplying all the matrices between a and b.  Getting the 
       top right corner box will give us our final answer.
     </p>
   </div>
@@ -185,8 +185,8 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </div>
     <p id="problemExp">
         Looks like everything is set.  Looks like we're ready for the problem.
-      Suppose we want to multiply the matricies M<sub>1</sub> × M<sub>2</sub> × M<sub>3</sub> × M<sub>4</sub> × M<sub>5</sub>.
-      What is the optimal factorization (technical term for order of multiplying matricies) for this problem?  
+      Suppose we want to multiply the matrices M<sub>1</sub> × M<sub>2</sub> × M<sub>3</sub> × M<sub>4</sub> × M<sub>5</sub>.
+      What is the optimal factorization (technical term for order of multiplying matrices) for this problem?  
       Let's do this!
     </p>
 
@@ -251,8 +251,8 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </div>
 
     <p>
-      First, we start by keeping track of all the possible combinations of multiplying 2 matricies.
-      Remember, we are not allowed to switch the order of the matricies, so there are only 4 combinations.
+      First, we start by keeping track of all the possible combinations of multiplying 2 matrices.
+      Remember, we are not allowed to switch the order of the matrices, so there are only 4 combinations.
     </p>
 
     <div id="calculations">
@@ -356,7 +356,7 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     <br />
     <p>
       From here on out, we will start heavily using our tables.  For round 2, we will
-      start looking at cost of multiplying 3 matricies together: Z<sub>1,3</sub>, 
+      start looking at cost of multiplying 3 matrices together: Z<sub>1,3</sub>, 
       Z<sub>2,4</sub>, and Z<sub>3,5</sub>.
     </p>
     <p>
@@ -563,7 +563,7 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     <br />
     <p>
       For round 3, we're finding all the possible ways to multiply 
-      4 matricies without changing their order.  Our goal is to fill in Z<sub>1,4</sub>
+      4 matrices without changing their order.  Our goal is to fill in Z<sub>1,4</sub>
       and Z<sub>2,5</sub>.  Let's start with Z<sub>1,4</sub>. <br />
     </p>
     <p style="text-align: center;">
@@ -903,7 +903,7 @@ If you would prefer reading the post as a contiguous block rather than a slide s
       <br />
       Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>.
       <br />
-      So the best factorization of these matricies is (M<sub>1</sub> × M<sub>2</sub>) × ((M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>).
+      So the best factorization of these matrices is (M<sub>1</sub> × M<sub>2</sub>) × ((M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>).
       And with that, we're done! Thanks for reading!
     </p>
   </div>
@@ -919,24 +919,24 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </p>
     <p>
       There are multiple sources online with great proofs, source code,
-      and explaination of the proofs, but I did not find an example problem that
+      and explanation of the proofs, but I did not find an example problem that
       I felt was easy to understand and follow.
       I hope that the proofs become much easier to understand after seeing this problem worked out.
     </p>
     <p>
       You may be wondering "What is my motivation for doing this problem using <em>Dynamic Programming</em>
-      when I could just as easily multiply the matricies in order and be done with it?".  Well, suppose that
-      the matricies are really big; as in, each matrix was a couple of hundred columns and rows.
+      when I could just as easily multiply the matrices in order and be done with it?".  Well, suppose that
+      the matrices are really big; as in, each matrix was a couple of hundred columns and rows.
       Ordinary matrix multiplication is an Θ(n<sup>3</sup>) operation, so it will take many operations.
-      It just so happens that the order in which you multiply matricies makes a huge difference in the number of
+      It just so happens that the order in which you multiply matrices makes a huge difference in the number of
       calculations you have to do.  That's why we look for the optimal order (technical term is factorization)  of multiplication.
     </p>
     <h2> Preliminaries </h2>
     <h4>Notation</h4>
     <ul>
-      <li>The symbol '×' will be used to signify multiplying two matricies together.</li>
+      <li>The symbol '×' will be used to signify multiplying two matrices together.</li>
       <li>The symbol '<symbol>&#8901</symbol>' will be used to signify multiplying two integers together.</li>
-      <li>Z<sub>a,b</sub> will be used to signify the cost of multiplying all the matricies
+      <li>Z<sub>a,b</sub> will be used to signify the cost of multiplying all the matrices
       from Matrix a to Matrix b together in the optimal order.</li>
     </ul>
     <h2> Preliminaries 2</h2>
@@ -946,7 +946,7 @@ If you would prefer reading the post as a contiguous block rather than a slide s
       where A is a matrix with p rows and q columns and B is a matrix with q rows and r columns.</li>
       <li>Matrix multiplication is associative, so A × (B × C) == (A × B) × C.</li>
       <li>Multiplying A<sub>p x q</sub> × B<sub>q x r</sub> will yield the matrix C<sub> p x r</sub>.</li>
-      <li>For matricies A and B, A × B <symbol>&#8800</symbol> B × A</li>
+      <li>For matrices A and B, A × B <symbol>&#8800</symbol> B × A</li>
     </ul>
     <h2> Preliminaries 3</h2>
     <div id="cost">
@@ -979,11 +979,11 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </div>
     <br />
     <p>
-      We will use this table to keep track of the cost of multiplying matricies.
+      We will use this table to keep track of the cost of multiplying matrices.
       Notice that the diagonals are all 0; it's because we won't be multiplying a matrix
       by itself.  The boxes with hyphens will be ignored because matrix multiplication works
       from left to right, not the other way around.  Element Z<sub>a,b</sub> in the table
-      will be the cost of multiplying all the matricies between a and b.  Getting the 
+      will be the cost of multiplying all the matrices between a and b.  Getting the 
       top right corner box will give us our final answer.
     </p>
     <h2> Preliminaries 4</h2>
@@ -1046,8 +1046,8 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </div>
     <p id="problemExp">
         Looks like everything is set.  Looks like we're ready for the problem.
-      Suppose we want to multiply the matricies M<sub>1</sub> × M<sub>2</sub> × M<sub>3</sub> × M<sub>4</sub> × M<sub>5</sub>.
-      What is the optimal factorization (technical term for order of multiplying matricies) for this problem?  
+      Suppose we want to multiply the matrices M<sub>1</sub> × M<sub>2</sub> × M<sub>3</sub> × M<sub>4</sub> × M<sub>5</sub>.
+      What is the optimal factorization (technical term for order of multiplying matrices) for this problem?  
       Let's do this!
     </p>
     <h2> Round 1</h2>
@@ -1109,8 +1109,8 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     </div>
 
     <p>
-      First, we start by keeping track of all the possible combinations of multiplying 2 matricies.
-      Remember, we are not allowed to switch the order of the matricies, so there are only 4 combinations.
+      First, we start by keeping track of all the possible combinations of multiplying 2 matrices.
+      Remember, we are not allowed to switch the order of the matrices, so there are only 4 combinations.
     </p>
 
     <div id="calculations">
@@ -1211,7 +1211,7 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     <br />
     <p>
       From here on out, we will start heavily using our tables.  For round 2, we will
-      start looking at cost of multiplying 3 matricies together: Z<sub>1,3</sub>, 
+      start looking at cost of multiplying 3 matrices together: Z<sub>1,3</sub>, 
       Z<sub>2,4</sub>, and Z<sub>3,5</sub>.
     </p>
     <p>
@@ -1413,7 +1413,7 @@ If you would prefer reading the post as a contiguous block rather than a slide s
     <br />
     <p>
       For round 3, we're finding all the possible ways to multiply 
-      4 matricies without changing their order.  Our goal is to fill in Z<sub>1,4</sub>
+      4 matrices without changing their order.  Our goal is to fill in Z<sub>1,4</sub>
       and Z<sub>2,5</sub>.  Let's start with Z<sub>1,4</sub>. <br />
     </p>
     <p style="text-align: center;">
@@ -1746,7 +1746,12 @@ If you would prefer reading the post as a contiguous block rather than a slide s
       <br />
       Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>.
       <br />
-      So the best factorization of these matricies is (M<sub>1</sub> × M<sub>2</sub>) × ((M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>).
+      So the best factorization of these matrices is (M<sub>1</sub> × M<sub>2</sub>) × ((M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>).
       And with that, we're done! Thanks for reading!
     </p>
 </div>
+
+<p>
+Edit 1: Changed the multiplication symbols to more friendly ones.
+Edit 2: Fixed spelling mistakes....I are really good at English :D
+</p>
