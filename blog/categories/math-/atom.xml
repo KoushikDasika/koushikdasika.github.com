@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Math, | Koushik Dasika]]></title>
   <link href="http://KoushikDasika.github.com/blog/categories/math-/atom.xml" rel="self"/>
   <link href="http://KoushikDasika.github.com/"/>
-  <updated>2013-01-30T22:25:02-05:00</updated>
+  <updated>2013-01-31T12:15:58-05:00</updated>
   <id>http://KoushikDasika.github.com/</id>
   <author>
     <name><![CDATA[Koushik Dasika]]></name>
@@ -90,8 +90,8 @@
     <h2> Preliminaries </h2>
     <h4>Notation</h4>
     <ul>
-      <li>The symbol 'X' will be used to signify multiplying two matricies together.</li>
-      <li>The symbol '*' will be used to signify multiplying two integers together.</li>
+      <li>The symbol '×' will be used to signify multiplying two matricies together.</li>
+      <li>The symbol '<symbol>&#8901</symbol>' will be used to signify multiplying two integers together.</li>
       <li>Z<sub>a,b</sub> will be used to signify the cost of multiplying all the matricies
       from Matrix a to Matrix b together in the optimal order.</li>
     </ul>
@@ -100,11 +100,11 @@
     <h2> Preliminaries 2</h2>
     <h4>Prerequisite Math Facts</h4>
     <ul>
-      <li>A<sub>p x q</sub> X B<sub>q x r</sub> will take p*q*r operations,
+      <li>A<sub>p x q</sub> × B<sub>q x r</sub> will take p<symbol>&#8901</symbol>q<symbol>&#8901</symbol>r operations,
       where A is a matrix with p rows and q columns and B is a matrix with q rows and r columns.</li>
-      <li>Matrix multiplication is associative, so A X (B X C) == (A X B) X C.</li>
-      <li>Multiplying A<sub>p x q</sub> X B<sub>q x r</sub> will yield the matrix C<sub> p x r</sub>.</li>
-      <li>For matricies A and B, A X B <symbol>&#8800</symbol> B X A</li>
+      <li>Matrix multiplication is associative, so A × (B × C) == (A × B) × C.</li>
+      <li>Multiplying A<sub>p x q</sub> × B<sub>q x r</sub> will yield the matrix C<sub> p x r</sub>.</li>
+      <li>For matricies A and B, A × B <symbol>&#8800</symbol> B × A</li>
     </ul>
   </div>
   <div>
@@ -113,7 +113,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -153,7 +153,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -211,7 +211,7 @@
     </div>
     <p id="problemExp">
         Looks like everything is set.  Looks like we're ready for the problem.
-      Suppose we want to multiply the matricies M<sub>1</sub> X M<sub>2</sub> X M<sub>3</sub> X M<sub>4</sub> X M<sub>5</sub>.
+      Suppose we want to multiply the matricies M<sub>1</sub> × M<sub>2</sub> × M<sub>3</sub> × M<sub>4</sub> × M<sub>5</sub>.
       What is the optimal factorization (technical term for order of multiplying matricies) for this problem?  
       Let's do this!
     </p>
@@ -223,7 +223,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -251,7 +251,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -291,26 +291,26 @@
         </tr>
         <tr>
           <td>Z<sub>1,2</sub></td>
-          <td>M<sub>1</sub> X M<sub>2</sub> </td>
-          <td>3*4*2 = 24</td>
+          <td>M<sub>1</sub> × M<sub>2</sub> </td>
+          <td>3<symbol>&#8901</symbol>4<symbol>&#8901</symbol>2 = 24</td>
           <td>3 x 2</td>
         </tr>
         <tr>
           <td>Z<sub>2,3</sub></td>
-          <td>M<sub>2</sub> X M<sub>3</sub> </td>
-          <td>4*2*3 = 24</td>
+          <td>M<sub>2</sub> × M<sub>3</sub> </td>
+          <td>4<symbol>&#8901</symbol>2<symbol>&#8901</symbol>3 = 24</td>
           <td>4 x 3</td>
         </tr>
         <tr>
           <td>Z<sub>3,4</sub></td>
-          <td>M<sub>3</sub> X M<sub>4</sub> </td>
-          <td>2*3*6 = 36</td>
+          <td>M<sub>3</sub> × M<sub>4</sub> </td>
+          <td>2<symbol>&#8901</symbol>3<symbol>&#8901</symbol>6 = 36</td>
           <td>2 x 6</td>
         </tr>
         <tr>
           <td>Z<sub>4,5</sub></td>
-          <td>M<sub>4</sub> X M<sub>5</sub> </td>
-          <td>3*6*5 = 90</td>
+          <td>M<sub>4</sub> × M<sub>5</sub> </td>
+          <td>3<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 90</td>
           <td>3 x 5</td>
         </tr>
       </table>
@@ -327,7 +327,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -355,7 +355,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -386,13 +386,13 @@
       Z<sub>2,4</sub>, and Z<sub>3,5</sub>.
     </p>
     <p>
-      For Z<sub>1,3</sub>, we want the min{(M<sub>1</sub> X M<sub>2</sub>) X M<sub>3</sub> 
-      , M<sub>1</sub> X (M<sub>2</sub> X M<sub>3</sub>)}.
+      For Z<sub>1,3</sub>, we want the min{(M<sub>1</sub> × M<sub>2</sub>) × M<sub>3</sub> 
+      , M<sub>1</sub> × (M<sub>2</sub> × M<sub>3</sub>)}.
       <br />
-      We can rewrite that as min{Z<sub>1,2</sub> X M<sub>3</sub>,
-      M<sub>1</sub> X Z<sub>2,3</sub>)}. Now we recognize the values from the table.  
-      <h3> An important point is that when we do the calculation of cost of Z<sub>1,2</sub> X M<sub>3</sub>, we have to find the cost of multiplying
-      Z<sub>1,2</sub> X M<sub>3</sub> and we have to add to that the cost of Z<sub>1,2</sub>, which is 24. </h3>
+      We can rewrite that as min{Z<sub>1,2</sub> × M<sub>3</sub>,
+      M<sub>1</sub> × Z<sub>2,3</sub>)}. Now we recognize the values from the table.  
+      <h3> An important point is that when we do the calculation of cost of Z<sub>1,2</sub> × M<sub>3</sub>, we have to find the cost of multiplying
+      Z<sub>1,2</sub> × M<sub>3</sub> and we have to add to that the cost of Z<sub>1,2</sub>, which is 24. </h3>
       We have to do this for each of the remaining 2 combinations.  We will end up doing 6 subproblems.
     </p>
   </div>
@@ -403,7 +403,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -431,7 +431,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -469,54 +469,54 @@
         </tr>
         <tr>
           <td>Z<sub>1,3</sub></td>
-          <td>(M<sub>1</sub> X M<sub>2</sub>) X M<sub>3</sub> </td>
-          <td>Z<sub>1,2</sub> X M<sub>3</sub> </td>
-          <td>3*2*3 = 18</td>
+          <td>(M<sub>1</sub> × M<sub>2</sub>) × M<sub>3</sub> </td>
+          <td>Z<sub>1,2</sub> × M<sub>3</sub> </td>
+          <td>3<symbol>&#8901</symbol>2<symbol>&#8901</symbol>3 = 18</td>
           <td>18 + 24 = 42</td>
           <td>3 x 3</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,3</sub></td>
-          <td>M<sub>1</sub> X (M<sub>2</sub> X M<sub>3</sub>)</td>
-          <td> M<sub>1</sub> X Z<sub>2,3</sub> </td>
-          <td>3*4*3 = 36</td>
+          <td>M<sub>1</sub> × (M<sub>2</sub> × M<sub>3</sub>)</td>
+          <td> M<sub>1</sub> × Z<sub>2,3</sub> </td>
+          <td>3<symbol>&#8901</symbol>4<symbol>&#8901</symbol>3 = 36</td>
           <td>36 + 24 = 50</td>
           <td>3 x 3</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,4</sub></td>
-          <td>(M<sub>2</sub> X M<sub>3</sub>) X M<sub>4</sub> </td>
-          <td>Z<sub>2,3</sub> X M<sub>4</sub> </td>
-          <td>4*3*6 = 72</td>
+          <td>(M<sub>2</sub> × M<sub>3</sub>) × M<sub>4</sub> </td>
+          <td>Z<sub>2,3</sub> × M<sub>4</sub> </td>
+          <td>4<symbol>&#8901</symbol>3<symbol>&#8901</symbol>6 = 72</td>
           <td>72 + 24 = 96</td>
           <td>4 x 6</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,4</sub></td>
-          <td>M<sub>2</sub> X (M<sub>3</sub> X M<sub>4</sub>)</td>
-          <td> M<sub>2</sub> X Z<sub>3,4</sub> </td>
-          <td>4*2*6 = 48</td>
+          <td>M<sub>2</sub> × (M<sub>3</sub> × M<sub>4</sub>)</td>
+          <td> M<sub>2</sub> × Z<sub>3,4</sub> </td>
+          <td>4<symbol>&#8901</symbol>2<symbol>&#8901</symbol>6 = 48</td>
           <td>36 + 48 = 84</td>
           <td>4 x 6</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>3,5</sub></td>
-          <td>(M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub> </td>
-          <td>Z<sub>3,4</sub> X M<sub>5</sub> </td>
-          <td>2*6*5 = 60</td>
+          <td>(M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub> </td>
+          <td>Z<sub>3,4</sub> × M<sub>5</sub> </td>
+          <td>2<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 60</td>
           <td>36 + 60 = 96</td>
           <td>2 x 5</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>3,5</sub></td>
-          <td>M<sub>3</sub> X (M<sub>4</sub> X M<sub>5</sub>)</td>
-          <td> M<sub>3</sub> X Z<sub>4,5</sub> </td>
-          <td>2*3*5 = 30</td>
+          <td>M<sub>3</sub> × (M<sub>4</sub> × M<sub>5</sub>)</td>
+          <td> M<sub>3</sub> × Z<sub>4,5</sub> </td>
+          <td>2<symbol>&#8901</symbol>3<symbol>&#8901</symbol>5 = 30</td>
           <td>30 + 90 = 120</td>
           <td>2 x 5</td>
           <td></code>&#x2717;</code></td>
@@ -534,7 +534,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -562,7 +562,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -593,9 +593,9 @@
       and Z<sub>2,5</sub>.  Let's start with Z<sub>1,4</sub>. <br />
     </p>
     <p style="text-align: center;">
-      Z<sub>1,4</sub> = min{ M<sub>1</sub> X Z<sub>2,4</sub>, 
-      Z<sub>1,2</sub> X Z<sub>3,4</sub>,
-      Z<sub>1,3</sub> X M<sub>4</sub>}
+      Z<sub>1,4</sub> = min{ M<sub>1</sub> × Z<sub>2,4</sub>, 
+      Z<sub>1,2</sub> × Z<sub>3,4</sub>,
+      Z<sub>1,3</sub> × M<sub>4</sub>}
     </p>
     <div id="calculations">
       <table>
@@ -609,24 +609,24 @@
         </tr>
         <tr>
           <td>Z<sub>1,4</sub></td>
-          <td> M<sub>1</sub> X Z<sub>2,4</sub> </td>
-          <td>3*4*6 = 72</td>
+          <td> M<sub>1</sub> × Z<sub>2,4</sub> </td>
+          <td>3<symbol>&#8901</symbol>4<symbol>&#8901</symbol>6 = 72</td>
           <td>72 + 84 = 156</td>
           <td>3 x 6</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,4</sub></td>
-          <td>Z<sub>1,2</sub> X Z<sub>3,4</sub>  </td>
-          <td>3*2*6 = 36</td>
+          <td>Z<sub>1,2</sub> × Z<sub>3,4</sub>  </td>
+          <td>3<symbol>&#8901</symbol>2<symbol>&#8901</symbol>6 = 36</td>
           <td>24 + 36 + 36 = 96</td>
           <td>3 x 6</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,4</sub></td>
-          <td>Z<sub>1,3</sub> X M<sub>4</sub> </td>
-          <td>3*3*6 = 54</td>
+          <td>Z<sub>1,3</sub> × M<sub>4</sub> </td>
+          <td>3<symbol>&#8901</symbol>3<symbol>&#8901</symbol>6 = 54</td>
           <td>42 + 54 = 96</td>
           <td>3 x 6</td>
           <td></code>&#x2713;</code></td>
@@ -646,7 +646,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -674,7 +674,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -703,9 +703,9 @@
       Now we're doing Z<sub>2,5</sub>.
     </p>
     <p style="text-align: center;">
-      Z<sub>2,5</sub> = min{ M<sub>2</sub> X Z<sub>3,5</sub>, 
-      Z<sub>2,3</sub> X Z<sub>4,5</sub>,
-      Z<sub>2,4</sub> X M<sub>5</sub>}
+      Z<sub>2,5</sub> = min{ M<sub>2</sub> × Z<sub>3,5</sub>, 
+      Z<sub>2,3</sub> × Z<sub>4,5</sub>,
+      Z<sub>2,4</sub> × M<sub>5</sub>}
     </p>
     <div id="calculations">
       <table>
@@ -719,24 +719,24 @@
         </tr>
         <tr>
           <td>Z<sub>2,5</sub></td>
-          <td> M<sub>2</sub> X Z<sub>3,5</sub> </td>
-          <td>4*2*5 = 40</td>
+          <td> M<sub>2</sub> × Z<sub>3,5</sub> </td>
+          <td>4<symbol>&#8901</symbol>2<symbol>&#8901</symbol>5 = 40</td>
           <td>40 + 96 = 136</td>
           <td>4 x 5</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,5</sub></td>
-          <td>Z<sub>2,3</sub> X Z<sub>4,5</sub>  </td>
-          <td>4*3*5 = 60</td>
+          <td>Z<sub>2,3</sub> × Z<sub>4,5</sub>  </td>
+          <td>4<symbol>&#8901</symbol>3<symbol>&#8901</symbol>5 = 60</td>
           <td>60 + 24 + 90 = 174</td>
           <td>4 x 5</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,5</sub></td>
-          <td>Z<sub>2,4</sub> X M<sub>5</sub> </td>
-          <td>4*6*5 = 120</td>
+          <td>Z<sub>2,4</sub> × M<sub>5</sub> </td>
+          <td>4<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 120</td>
           <td>84 + 120 = 204</td>
           <td>4 x 5</td>
           <td></code>&#x2717;</code></td>
@@ -753,7 +753,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -781,7 +781,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -810,10 +810,10 @@
       As with any good final boss battle, this one will have the most parts.
     </p>
     <p style="text-align: center;">
-      Z<sub>1,5</sub> = min{ M<sub>1</sub> X Z<sub>2,5</sub>, 
-      Z<sub>1,2</sub> X Z<sub>3,5</sub>,
-      Z<sub>1,3</sub> X Z<sub>4,5</sub>,
-      Z<sub>1,4</sub> X M<sub>5</sub>}
+      Z<sub>1,5</sub> = min{ M<sub>1</sub> × Z<sub>2,5</sub>, 
+      Z<sub>1,2</sub> × Z<sub>3,5</sub>,
+      Z<sub>1,3</sub> × Z<sub>4,5</sub>,
+      Z<sub>1,4</sub> × M<sub>5</sub>}
     </p>
     <div id="calculations">
       <table>
@@ -827,32 +827,32 @@
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td> M<sub>1</sub> X Z<sub>2,5</sub> </td>
-          <td>2*4*5 = 60</td>
+          <td> M<sub>1</sub> × Z<sub>2,5</sub> </td>
+          <td>2<symbol>&#8901</symbol>4<symbol>&#8901</symbol>5 = 60</td>
           <td>60 + 136 = 196</td>
           <td>3 x 5</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td>Z<sub>1,2</sub> X Z<sub>3,5</sub>  </td>
-          <td>3*2*5 = 30</td>
+          <td>Z<sub>1,2</sub> × Z<sub>3,5</sub>  </td>
+          <td>3<symbol>&#8901</symbol>2<symbol>&#8901</symbol>5 = 30</td>
           <td>30 + 24 + 96 = 150</td>
           <td>3 x 5</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td>Z<sub>1,3</sub> X Z<sub>4,5</sub>  </td>
-          <td>3*3*5 = 45</td>
+          <td>Z<sub>1,3</sub> × Z<sub>4,5</sub>  </td>
+          <td>3<symbol>&#8901</symbol>3<symbol>&#8901</symbol>5 = 45</td>
           <td>45 + 42 + 90 = 177</td>
           <td>3 x 5</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td>Z<sub>1,4</sub> X M<sub>5</sub> </td>
-          <td>3*6*5 = 90</td>
+          <td>Z<sub>1,4</sub> × M<sub>5</sub> </td>
+          <td>3<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 90</td>
           <td>96 + 90 = 186</td>
           <td>3 x 5</td>
           <td></code>&#x2717;</code></td>
@@ -860,7 +860,7 @@
       </table>
     </div>
     <p>
-      So we found that the best factorization for this problm is Z<sub>1,2</sub> X Z<sub>3,5</sub> and the total cost is 150.
+      So we found that the best factorization for this problm is Z<sub>1,2</sub> × Z<sub>3,5</sub> and the total cost is 150.
     </p>
   </div>
   <div>
@@ -869,7 +869,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -897,7 +897,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -923,13 +923,13 @@
     </div>
     <br />
     <p>
-      So we found that the best factorization for this problm is Z<sub>1,2</sub> X Z<sub>3,5</sub> and the total cost is 150.
+      So we found that the best factorization for this problm is Z<sub>1,2</sub> × Z<sub>3,5</sub> and the total cost is 150.
       <br />
-      Recall from round 1 that Z<sub>1,2</sub> is M<sub>1</sub> X M<sub>2</sub>.
+      Recall from round 1 that Z<sub>1,2</sub> is M<sub>1</sub> × M<sub>2</sub>.
       <br />
-      Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>.
+      Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>.
       <br />
-      So the best factorization of these matricies is (M<sub>1</sub> X M<sub>2</sub>) X ((M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>).
+      So the best factorization of these matricies is (M<sub>1</sub> × M<sub>2</sub>) × ((M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>).
       And with that, we're done! Thanks for reading!
     </p>
   </div>
@@ -963,26 +963,26 @@
     <h2> Preliminaries </h2>
     <h4>Notation</h4>
     <ul>
-      <li>The symbol 'X' will be used to signify multiplying two matricies together.</li>
-      <li>The symbol '*' will be used to signify multiplying two integers together.</li>
+      <li>The symbol '×' will be used to signify multiplying two matricies together.</li>
+      <li>The symbol '<symbol>&#8901</symbol>' will be used to signify multiplying two integers together.</li>
       <li>Z<sub>a,b</sub> will be used to signify the cost of multiplying all the matricies
       from Matrix a to Matrix b together in the optimal order.</li>
     </ul>
     <h2> Preliminaries 2</h2>
     <h4>Prerequisite Math Facts</h4>
     <ul>
-      <li>A<sub>p x q</sub> X B<sub>q x r</sub> will take p*q*r operations,
+      <li>A<sub>p x q</sub> × B<sub>q x r</sub> will take p<symbol>&#8901</symbol>q<symbol>&#8901</symbol>r operations,
       where A is a matrix with p rows and q columns and B is a matrix with q rows and r columns.</li>
-      <li>Matrix multiplication is associative, so A X (B X C) == (A X B) X C.</li>
-      <li>Multiplying A<sub>p x q</sub> X B<sub>q x r</sub> will yield the matrix C<sub> p x r</sub>.</li>
-      <li>For matricies A and B, A X B <symbol>&#8800</symbol> B X A</li>
+      <li>Matrix multiplication is associative, so A × (B × C) == (A × B) × C.</li>
+      <li>Multiplying A<sub>p x q</sub> × B<sub>q x r</sub> will yield the matrix C<sub> p x r</sub>.</li>
+      <li>For matricies A and B, A × B <symbol>&#8800</symbol> B × A</li>
     </ul>
     <h2> Preliminaries 3</h2>
     <div id="cost">
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1020,7 +1020,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1075,7 +1075,7 @@
     </div>
     <p id="problemExp">
         Looks like everything is set.  Looks like we're ready for the problem.
-      Suppose we want to multiply the matricies M<sub>1</sub> X M<sub>2</sub> X M<sub>3</sub> X M<sub>4</sub> X M<sub>5</sub>.
+      Suppose we want to multiply the matricies M<sub>1</sub> × M<sub>2</sub> × M<sub>3</sub> × M<sub>4</sub> × M<sub>5</sub>.
       What is the optimal factorization (technical term for order of multiplying matricies) for this problem?  
       Let's do this!
     </p>
@@ -1084,7 +1084,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1112,7 +1112,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1152,26 +1152,26 @@
         </tr>
         <tr>
           <td>Z<sub>1,2</sub></td>
-          <td>M<sub>1</sub> X M<sub>2</sub> </td>
-          <td>3*4*2 = 24</td>
+          <td>M<sub>1</sub> × M<sub>2</sub> </td>
+          <td>3<symbol>&#8901</symbol>4<symbol>&#8901</symbol>2 = 24</td>
           <td>3 x 2</td>
         </tr>
         <tr>
           <td>Z<sub>2,3</sub></td>
-          <td>M<sub>2</sub> X M<sub>3</sub> </td>
-          <td>4*2*3 = 24</td>
+          <td>M<sub>2</sub> × M<sub>3</sub> </td>
+          <td>4<symbol>&#8901</symbol>2<symbol>&#8901</symbol>3 = 24</td>
           <td>4 x 3</td>
         </tr>
         <tr>
           <td>Z<sub>3,4</sub></td>
-          <td>M<sub>3</sub> X M<sub>4</sub> </td>
-          <td>2*3*6 = 36</td>
+          <td>M<sub>3</sub> × M<sub>4</sub> </td>
+          <td>2<symbol>&#8901</symbol>3<symbol>&#8901</symbol>6 = 36</td>
           <td>2 x 6</td>
         </tr>
         <tr>
           <td>Z<sub>4,5</sub></td>
-          <td>M<sub>4</sub> X M<sub>5</sub> </td>
-          <td>3*6*5 = 90</td>
+          <td>M<sub>4</sub> × M<sub>5</sub> </td>
+          <td>3<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 90</td>
           <td>3 x 5</td>
         </tr>
       </table>
@@ -1185,7 +1185,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1213,7 +1213,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1244,13 +1244,13 @@
       Z<sub>2,4</sub>, and Z<sub>3,5</sub>.
     </p>
     <p>
-      For Z<sub>1,3</sub>, we want the min{(M<sub>1</sub> X M<sub>2</sub>) X M<sub>3</sub> 
-      , M<sub>1</sub> X (M<sub>2</sub> X M<sub>3</sub>)}.
+      For Z<sub>1,3</sub>, we want the min{(M<sub>1</sub> × M<sub>2</sub>) × M<sub>3</sub> 
+      , M<sub>1</sub> × (M<sub>2</sub> × M<sub>3</sub>)}.
       <br />
-      We can rewrite that as min{Z<sub>1,2</sub> X M<sub>3</sub>,
-      M<sub>1</sub> X Z<sub>2,3</sub>)}. Now we recognize the values from the table.  
-      <h3> An important point is that when we do the calculation of cost of Z<sub>1,2</sub> X M<sub>3</sub>, we have to find the cost of multiplying
-      Z<sub>1,2</sub> X M<sub>3</sub> and we have to add to that the cost of Z<sub>1,2</sub>, which is 24. </h3>
+      We can rewrite that as min{Z<sub>1,2</sub> × M<sub>3</sub>,
+      M<sub>1</sub> × Z<sub>2,3</sub>)}. Now we recognize the values from the table.  
+      <h3> An important point is that when we do the calculation of cost of Z<sub>1,2</sub> × M<sub>3</sub>, we have to find the cost of multiplying
+      Z<sub>1,2</sub> × M<sub>3</sub> and we have to add to that the cost of Z<sub>1,2</sub>, which is 24. </h3>
       We have to do this for each of the remaining 2 combinations.  We will end up doing 6 subproblems.
     </p>
     <h2> Round 2 </h2>
@@ -1258,7 +1258,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1286,7 +1286,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1324,54 +1324,54 @@
         </tr>
         <tr>
           <td>Z<sub>1,3</sub></td>
-          <td>(M<sub>1</sub> X M<sub>2</sub>) X M<sub>3</sub> </td>
-          <td>Z<sub>1,2</sub> X M<sub>3</sub> </td>
-          <td>3*2*3 = 18</td>
+          <td>(M<sub>1</sub> × M<sub>2</sub>) × M<sub>3</sub> </td>
+          <td>Z<sub>1,2</sub> × M<sub>3</sub> </td>
+          <td>3<symbol>&#8901</symbol>2<symbol>&#8901</symbol>3 = 18</td>
           <td>18 + 24 = 42</td>
           <td>3 x 3</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,3</sub></td>
-          <td>M<sub>1</sub> X (M<sub>2</sub> X M<sub>3</sub>)</td>
-          <td> M<sub>1</sub> X Z<sub>2,3</sub> </td>
-          <td>3*4*3 = 36</td>
+          <td>M<sub>1</sub> × (M<sub>2</sub> × M<sub>3</sub>)</td>
+          <td> M<sub>1</sub> × Z<sub>2,3</sub> </td>
+          <td>3<symbol>&#8901</symbol>4<symbol>&#8901</symbol>3 = 36</td>
           <td>36 + 24 = 50</td>
           <td>3 x 3</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,4</sub></td>
-          <td>(M<sub>2</sub> X M<sub>3</sub>) X M<sub>4</sub> </td>
-          <td>Z<sub>2,3</sub> X M<sub>4</sub> </td>
-          <td>4*3*6 = 72</td>
+          <td>(M<sub>2</sub> × M<sub>3</sub>) × M<sub>4</sub> </td>
+          <td>Z<sub>2,3</sub> × M<sub>4</sub> </td>
+          <td>4<symbol>&#8901</symbol>3<symbol>&#8901</symbol>6 = 72</td>
           <td>72 + 24 = 96</td>
           <td>4 x 6</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,4</sub></td>
-          <td>M<sub>2</sub> X (M<sub>3</sub> X M<sub>4</sub>)</td>
-          <td> M<sub>2</sub> X Z<sub>3,4</sub> </td>
-          <td>4*2*6 = 48</td>
+          <td>M<sub>2</sub> × (M<sub>3</sub> × M<sub>4</sub>)</td>
+          <td> M<sub>2</sub> × Z<sub>3,4</sub> </td>
+          <td>4<symbol>&#8901</symbol>2<symbol>&#8901</symbol>6 = 48</td>
           <td>36 + 48 = 84</td>
           <td>4 x 6</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>3,5</sub></td>
-          <td>(M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub> </td>
-          <td>Z<sub>3,4</sub> X M<sub>5</sub> </td>
-          <td>2*6*5 = 60</td>
+          <td>(M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub> </td>
+          <td>Z<sub>3,4</sub> × M<sub>5</sub> </td>
+          <td>2<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 60</td>
           <td>36 + 60 = 96</td>
           <td>2 x 5</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>3,5</sub></td>
-          <td>M<sub>3</sub> X (M<sub>4</sub> X M<sub>5</sub>)</td>
-          <td> M<sub>3</sub> X Z<sub>4,5</sub> </td>
-          <td>2*3*5 = 30</td>
+          <td>M<sub>3</sub> × (M<sub>4</sub> × M<sub>5</sub>)</td>
+          <td> M<sub>3</sub> × Z<sub>4,5</sub> </td>
+          <td>2<symbol>&#8901</symbol>3<symbol>&#8901</symbol>5 = 30</td>
           <td>30 + 90 = 120</td>
           <td>2 x 5</td>
           <td></code>&#x2717;</code></td>
@@ -1387,7 +1387,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1415,7 +1415,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1446,9 +1446,9 @@
       and Z<sub>2,5</sub>.  Let's start with Z<sub>1,4</sub>. <br />
     </p>
     <p style="text-align: center;">
-      Z<sub>1,4</sub> = min{ M<sub>1</sub> X Z<sub>2,4</sub>, 
-      Z<sub>1,2</sub> X Z<sub>3,4</sub>,
-      Z<sub>1,3</sub> X M<sub>4</sub>}
+      Z<sub>1,4</sub> = min{ M<sub>1</sub> × Z<sub>2,4</sub>, 
+      Z<sub>1,2</sub> × Z<sub>3,4</sub>,
+      Z<sub>1,3</sub> × M<sub>4</sub>}
     </p>
     <div id="calculations">
       <table>
@@ -1462,24 +1462,24 @@
         </tr>
         <tr>
           <td>Z<sub>1,4</sub></td>
-          <td> M<sub>1</sub> X Z<sub>2,4</sub> </td>
-          <td>3*4*6 = 72</td>
+          <td> M<sub>1</sub> × Z<sub>2,4</sub> </td>
+          <td>3<symbol>&#8901</symbol>4<symbol>&#8901</symbol>6 = 72</td>
           <td>72 + 84 = 156</td>
           <td>3 x 6</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,4</sub></td>
-          <td>Z<sub>1,2</sub> X Z<sub>3,4</sub>  </td>
-          <td>3*2*6 = 36</td>
+          <td>Z<sub>1,2</sub> × Z<sub>3,4</sub>  </td>
+          <td>3<symbol>&#8901</symbol>2<symbol>&#8901</symbol>6 = 36</td>
           <td>24 + 36 + 36 = 96</td>
           <td>3 x 6</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,4</sub></td>
-          <td>Z<sub>1,3</sub> X M<sub>4</sub> </td>
-          <td>3*3*6 = 54</td>
+          <td>Z<sub>1,3</sub> × M<sub>4</sub> </td>
+          <td>3<symbol>&#8901</symbol>3<symbol>&#8901</symbol>6 = 54</td>
           <td>42 + 54 = 96</td>
           <td>3 x 6</td>
           <td></code>&#x2713;</code></td>
@@ -1496,7 +1496,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1524,7 +1524,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1553,9 +1553,9 @@
       Now we're doing Z<sub>2,5</sub>.
     </p>
     <p style="text-align: center;">
-      Z<sub>2,5</sub> = min{ M<sub>2</sub> X Z<sub>3,5</sub>, 
-      Z<sub>2,3</sub> X Z<sub>4,5</sub>,
-      Z<sub>2,4</sub> X M<sub>5</sub>}
+      Z<sub>2,5</sub> = min{ M<sub>2</sub> × Z<sub>3,5</sub>, 
+      Z<sub>2,3</sub> × Z<sub>4,5</sub>,
+      Z<sub>2,4</sub> × M<sub>5</sub>}
     </p>
     <div id="calculations">
       <table>
@@ -1569,24 +1569,24 @@
         </tr>
         <tr>
           <td>Z<sub>2,5</sub></td>
-          <td> M<sub>2</sub> X Z<sub>3,5</sub> </td>
-          <td>4*2*5 = 40</td>
+          <td> M<sub>2</sub> × Z<sub>3,5</sub> </td>
+          <td>4<symbol>&#8901</symbol>2<symbol>&#8901</symbol>5 = 40</td>
           <td>40 + 96 = 136</td>
           <td>4 x 5</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,5</sub></td>
-          <td>Z<sub>2,3</sub> X Z<sub>4,5</sub>  </td>
-          <td>4*3*5 = 60</td>
+          <td>Z<sub>2,3</sub> × Z<sub>4,5</sub>  </td>
+          <td>4<symbol>&#8901</symbol>3<symbol>&#8901</symbol>5 = 60</td>
           <td>60 + 24 + 90 = 174</td>
           <td>4 x 5</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>2,5</sub></td>
-          <td>Z<sub>2,4</sub> X M<sub>5</sub> </td>
-          <td>4*6*5 = 120</td>
+          <td>Z<sub>2,4</sub> × M<sub>5</sub> </td>
+          <td>4<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 120</td>
           <td>84 + 120 = 204</td>
           <td>4 x 5</td>
           <td></code>&#x2717;</code></td>
@@ -1601,7 +1601,7 @@
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1629,7 +1629,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1658,10 +1658,10 @@
       As with any good final boss battle, this one will have the most parts.
     </p>
     <p style="text-align: center;">
-      Z<sub>1,5</sub> = min{ M<sub>1</sub> X Z<sub>2,5</sub>, 
-      Z<sub>1,2</sub> X Z<sub>3,5</sub>,
-      Z<sub>1,3</sub> X Z<sub>4,5</sub>,
-      Z<sub>1,4</sub> X M<sub>5</sub>}
+      Z<sub>1,5</sub> = min{ M<sub>1</sub> × Z<sub>2,5</sub>, 
+      Z<sub>1,2</sub> × Z<sub>3,5</sub>,
+      Z<sub>1,3</sub> × Z<sub>4,5</sub>,
+      Z<sub>1,4</sub> × M<sub>5</sub>}
     </p>
     <div id="calculations">
       <table>
@@ -1675,32 +1675,32 @@
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td> M<sub>1</sub> X Z<sub>2,5</sub> </td>
-          <td>2*4*5 = 60</td>
+          <td> M<sub>1</sub> × Z<sub>2,5</sub> </td>
+          <td>2<symbol>&#8901</symbol>4<symbol>&#8901</symbol>5 = 60</td>
           <td>60 + 136 = 196</td>
           <td>3 x 5</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td>Z<sub>1,2</sub> X Z<sub>3,5</sub>  </td>
-          <td>3*2*5 = 30</td>
+          <td>Z<sub>1,2</sub> × Z<sub>3,5</sub>  </td>
+          <td>3<symbol>&#8901</symbol>2<symbol>&#8901</symbol>5 = 30</td>
           <td>30 + 24 + 96 = 150</td>
           <td>3 x 5</td>
           <td></code>&#x2713;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td>Z<sub>1,3</sub> X Z<sub>4,5</sub>  </td>
-          <td>3*3*5 = 45</td>
+          <td>Z<sub>1,3</sub> × Z<sub>4,5</sub>  </td>
+          <td>3<symbol>&#8901</symbol>3<symbol>&#8901</symbol>5 = 45</td>
           <td>45 + 42 + 90 = 177</td>
           <td>3 x 5</td>
           <td></code>&#x2717;</code></td>
         </tr>
         <tr>
           <td>Z<sub>1,5</sub></td>
-          <td>Z<sub>1,4</sub> X M<sub>5</sub> </td>
-          <td>3*6*5 = 90</td>
+          <td>Z<sub>1,4</sub> × M<sub>5</sub> </td>
+          <td>3<symbol>&#8901</symbol>6<symbol>&#8901</symbol>5 = 90</td>
           <td>96 + 90 = 186</td>
           <td>3 x 5</td>
           <td></code>&#x2717;</code></td>
@@ -1708,14 +1708,14 @@
       </table>
     </div>
     <p>
-      So we found that the best factorization for this problm is Z<sub>1,2</sub> X Z<sub>3,5</sub> and the total cost is 150.
+      So we found that the best factorization for this problm is Z<sub>1,2</sub> × Z<sub>3,5</sub> and the total cost is 150.
     </p>
     <h2>Final Credits</h2>
     <div id="cost">
       <h4 id="tablehead">Cost Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1743,7 +1743,7 @@
       <h4 id="tablehead">Dimensions Table</h4>
       <table>
         <tr>
-          <th>X</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+          <th>×</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
         </tr>
 
         <tr>
@@ -1769,13 +1769,13 @@
     </div>
     <br />
     <p>
-      So we found that the best factorization for this problm is Z<sub>1,2</sub> X Z<sub>3,5</sub> and the total cost is 150.
+      So we found that the best factorization for this problm is Z<sub>1,2</sub> × Z<sub>3,5</sub> and the total cost is 150.
       <br />
-      Recall from round 1 that Z<sub>1,2</sub> is M<sub>1</sub> X M<sub>2</sub>.
+      Recall from round 1 that Z<sub>1,2</sub> is M<sub>1</sub> × M<sub>2</sub>.
       <br />
-      Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>.
+      Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>.
       <br />
-      So the best factorization of these matricies is (M<sub>1</sub> X M<sub>2</sub>) X ((M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>).
+      So the best factorization of these matricies is (M<sub>1</sub> × M<sub>2</sub>) × ((M<sub>3</sub> × M<sub>4</sub>) × M<sub>5</sub>).
       And with that, we're done! Thanks for reading!
     </p>
 </div>
