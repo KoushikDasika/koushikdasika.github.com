@@ -27,10 +27,15 @@ categories: Math, Algorithms
      $('#contiguous').hide();
 
      $('#trigger').click(function() {
+       $('.slider-nav').toggle();
+       $('#slides').toggle();
        $('#contiguous').toggle();
      });
    });
 </script>
+
+If you would prefer reading the post as a contiguous block rather than a slide show, <button id="trigger" type="button">Click here</button>
+
 <div id="slides">
   <div>
     <h2> Motivation </h2>
@@ -899,12 +904,11 @@ categories: Math, Algorithms
       Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>.
       <br />
       So the best factorization of these matricies is (M<sub>1</sub> X M<sub>2</sub>) X ((M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>).
-      And with that we're done! Thanks for reading!
+      And with that, we're done! Thanks for reading!
     </p>
   </div>
 </div>
 
-If you would prefer reading it as a contiguous block, <button id="trigger" type="button">Click here</button>
 <div id="contiguous">
     <h2> Motivation </h2>
     <p>
@@ -1743,6 +1747,6 @@ If you would prefer reading it as a contiguous block, <button id="trigger" type=
       Also recall from round 2 that Z<sub>3,5</sub> is (M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>.
       <br />
       So the best factorization of these matricies is (M<sub>1</sub> X M<sub>2</sub>) X ((M<sub>3</sub> X M<sub>4</sub>) X M<sub>5</sub>).
-      And with that we're done! Thanks for reading!
+      And with that, we're done! Thanks for reading!
     </p>
 </div>
