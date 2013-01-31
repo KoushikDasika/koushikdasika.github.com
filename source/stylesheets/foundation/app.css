@@ -45,3 +45,11 @@ sub {
   margin-bottom: 1%;
 }
 
+.right {
+  margin-right: -5%;
+}
+
+.left {
+  margin-left: -5%;
+}
+
