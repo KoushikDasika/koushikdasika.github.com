@@ -9,7 +9,7 @@ footer: true
 
 <div id="Fourchal">
   <div>
-    <h2><a href="http://www.fourchal.com" >Mood Music</a></h2>
+    <h2><a href="http://www.fourchal.com" >Fourchal</a></h2>
     <img src="/assets/images/fourchal.jpeg" title="Fourchal" alt="http://www.fourchal.com"/>
     <p>
       This was started at the Goodnik Helping Hacks Hackathon.  I was challenged to make a website
