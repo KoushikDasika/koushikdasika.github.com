@@ -6,12 +6,13 @@ description: "What I wish every business leader knew about AI and LLMs — why c
 ---
 
 import DiagramFigure from '@/components/DiagramFigure';
+import ScientificMethodDiagram from '@/components/ScientificMethodDiagram';
 
 ### What I Wish Every Business Leader Knew About AI and LLMs
 
 ---
 
-There's a lot of excitement right now about AI making software development faster. Agentic coding is real, Claude Code, OpenAI Codex, and Gemini are real, and so are the open source alternatives running locally via Ollama: DeepSeek, Qwen, Gemma, Llama, and more. The productivity gains are real. But most of the conversation is happening inside a very narrow frame, one that makes total sense if you've never worked in engineering, and makes almost no sense if you have. This post is my attempt to bridge that gap. Not to push back on AI, not to gatekeep engineering, but to give business leaders a clearer picture of how engineering actually works so we can all get more out of it together.
+There's a lot of excitement right now about AI making software development faster. Agentic coding is real, Claude Code, OpenAI Codex, and Gemini are real, and so are the open source alternatives running locally via Ollama: DeepSeek, Qwen, Gemma, Llama, and more. The productivity gains are real <a href="#cite-1">[1]</a>. But most of the conversation is happening inside a very narrow frame, one that makes total sense if you've never worked in engineering, and makes almost no sense if you have. This post is my attempt to bridge that gap. Not to push back on AI, not to gatekeep engineering, but to give business leaders a clearer picture of how engineering actually works so we can all get more out of it together.
 
 Let me get something out of the way upfront. I am not an AI skeptic. I use AI every single day across everything I do. It makes me a better engineer than I ever was. This is not a doomer post. This is about nuance, specifically the gap in understanding between business and engineering that AI has made way more visible. If you've ever looked at your engineering team and wondered why tickets take so long, this one's for you.
 
@@ -23,12 +24,7 @@ Think about how most departments operate. Sales has a pipeline. Operations has c
 
 Engineering is fundamentally different. Engineering follows the scientific method.
 
-<DiagramFigure
-  lightSrc="/assets/images/blog/scientific-method-light.svg"
-  darkSrc="/assets/images/blog/scientific-method-dark.svg"
-  alt="Flowchart showing the scientific method in engineering: Observe Problem, Research, Form Hypothesis, Plan and Design, Execute/Code, Collect Results, Iterate"
-  caption="Engineering follows the scientific method. Coding is just step E."
-/>
+<ScientificMethodDiagram />
 
 The coding part? That's step E. For a senior engineer, that's roughly **20% of the actual work**. The other 80% is research, planning, designing the right solution, and then collecting and interpreting results. This is why "plan mode" in tools like Claude Code, Codex, and Gemini resonates so much with engineers. It mirrors how we actually think. And it's no coincidence that most best practices posts are really just about improving the feedback loop at the end.
 
@@ -40,7 +36,7 @@ Here's the math that should stop you mid-sentence at your next planning meeting.
 
 </div>
 
-This isn't just intuition. It has a name. **Amdahl's Law** states that the speedup you get from optimizing one part of a system is limited by how much of the total work that part actually represents. If the sequential bottleneck is small, no amount of parallelization, or AI acceleration, changes the overall outcome much. AI can help with the other phases too, but most people aren't even framing it that way yet.
+This isn't just intuition — it's known as **Amdahl's Law**. This law states that the speedup you get from optimizing one part of a system is limited by how much of the total work that part actually represents. If the sequential bottleneck is small, no amount of parallelization, or AI acceleration, changes the overall outcome much. AI can help with the other phases too, but most people aren't even framing it that way yet.
 
 ---
 
@@ -74,7 +70,7 @@ Here are real variables that shape engineering decisions that no LLM will ever k
 
 None of that is in the model. A senior engineer holds all of that in their head and navigates it constantly. That's not coding. That's judgment.
 
-This is also why, regardless of who or what wrote the code, **production PRs deserve the same review process.** If an agentic tool wrote a feature, it should go through the same scrutiny as if a junior engineer wrote it, because the model had the same blind spots a junior engineer would have. No organizational context, no awareness of the edge cases your team has learned the hard way, no understanding of the SLA implications of that one innocent-looking change. The code might look clean. That doesn't mean it's right for your system.
+This is also why, regardless of who or what wrote the code, **production PRs deserve the same review process.** If an agentic tool wrote a feature, it should go through the same scrutiny as if a junior engineer wrote it, because while the model may have many of the same blind spots as a junior engineer, it also has technically unique blind spots as well: no organizational context, no awareness of the edge cases your team has learned the hard way, no understanding of the SLA implications of that one innocent-looking change. The code might look clean. That doesn't mean it's right for your system.
 
 ---
 
@@ -97,7 +93,7 @@ Why doesn't it get written down? Two reasons:
 1. **Documentation ages.** Without constant maintenance, it drifts from reality fast. Outdated docs are often worse than no docs.
 2. **Maintaining docs is a full-time job.** One that generates zero revenue. It's hard to justify when there's a roadmap to ship.
 
-"Just have AI write it" is a reasonable reaction, but AI context windows are precious. Research has shown that the first 10-20% of a context window heavily influences the outcome of the entire session. Flooding it with documentation has real tradeoffs. This is still an evolving area but it's not a solved problem. The tacit knowledge gap is one of the biggest reasons engineering looks opaque from the outside. It's not gatekeeping. It's just how knowledge-dense work accumulates over time.
+"Just have AI write it" is a reasonable reaction, but AI context windows are precious. Research has shown that early context disproportionately influences the outcome of a session <a href="#cite-2">[2]</a>. Flooding it with documentation has real tradeoffs. This is still an evolving area but it's not a solved problem. The tacit knowledge gap is one of the biggest reasons engineering looks opaque from the outside. It's not gatekeeping. It's just how knowledge-dense work accumulates over time.
 
 ---
 
@@ -197,7 +193,7 @@ Here's how it actually came together. I dictated all of the core ideas, argument
 By the numbers:
 - **10 major idea threads** dictated by me across the conversation
 - **3 full draft iterations** of the post, plus **7 targeted section edits**
-- **9 engineering laws** researched and woven in from [The 20 Software Engineering Laws](https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws) by Dr. Milan Milanović
+- **9 engineering laws** researched and woven in from *The 20 Software Engineering Laws* by Dr. Milan Milanović <a href="#cite-3">[3]</a>
 - **1 title** that went through 4 distinct naming directions before clicking
 - **0 sentences** I would describe as pure AI filler. Every point in here came from my brain, Claude just helped me say it clearly
 
@@ -206,3 +202,13 @@ The irony of using Claude to write a post about the limits of AI is not lost on 
 I'll also be honest: I was never a great writer. B's and C's in writing class growing up. The ideas were always there. Getting them out of my head and onto a page in a way that other people could follow was always the hard part. That's exactly the gap AI fills for me. It doesn't think for me. It just gets out of the way of my thinking.
 
 This is what the human + AI workflow actually looks like in practice. Not AI replacing the thinking. AI amplifying it.
+
+---
+
+## Citations
+
+<span id="cite-1">**[1]**</span> METR (2025). [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/). Randomized controlled trial with 16 experienced open-source developers across 246 tasks. ([arXiv](https://arxiv.org/abs/2507.09089)) ([HN discussion](https://news.ycombinator.com/item?id=44522772))
+
+<span id="cite-2">**[2]**</span> Liu, N., Lin, K., Hewitt, J., et al. (2024). [Lost in the Middle: How Language Models Use Long Contexts](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long). *Transactions of the Association for Computational Linguistics, 12*, 157–173. ([HN discussion](https://news.ycombinator.com/item?id=46828936))
+
+<span id="cite-3">**[3]**</span> Milanović, M. [The 20 Software Engineering Laws](https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws). *Tech World with Milan*.
