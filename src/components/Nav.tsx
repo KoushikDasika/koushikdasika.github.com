@@ -11,10 +11,8 @@ import { cn } from '@/lib/utils';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/projects', label: 'Projects' },
   { href: '/blog', label: 'Blog' },
   { href: '/blog/archives', label: 'Archives' },
-  { href: '/assets/pdfs/KoushikDasikaWeb.pdf', label: 'Resume', external: true },
   { href: 'https://github.com/KoushikDasika', label: 'GitHub', external: true },
 ];
 
