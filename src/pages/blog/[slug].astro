@@ -21,6 +21,9 @@ const formatted = new Intl.DateTimeFormat('en-US', {
   month: 'long',
   day: 'numeric',
 }).format(post.data.date);
+
+const words = post.body?.split(/\s+/).length ?? 0;
+const readingTime = Math.max(1, Math.ceil(words / 230));
 ---
 
 <BaseLayout title={`${post.data.title} — Koushik Dasika`} description={post.data.description}>
@@ -39,6 +42,8 @@ const formatted = new Intl.DateTimeFormat('en-US', {
         <p class="text-muted-foreground text-sm">
           Posted on <time datetime={post.data.date.toISOString()}>{formatted}</time>
           {' '}by Koushik Dasika
+          <span class="mx-2">·</span>
+          {readingTime} min read
         </p>
       </header>
 
