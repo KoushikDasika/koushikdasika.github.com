@@ -1,0 +1,208 @@
+---
+title: "Your Engineer Isn't Slow. They're Thinking."
+date: 2026-04-28
+categories: ["Engineering Leadership", "AI", "Software Engineering"]
+description: "What I wish every business leader knew about AI and LLMs — why coding is only 20% of the work, and where the real leverage is."
+---
+
+import DiagramFigure from '@/components/DiagramFigure';
+
+### What I Wish Every Business Leader Knew About AI and LLMs
+
+---
+
+There's a lot of excitement right now about AI making software development faster. Agentic coding is real, Claude Code, OpenAI Codex, and Gemini are real, and so are the open source alternatives running locally via Ollama: DeepSeek, Qwen, Gemma, Llama, and more. The productivity gains are real. But most of the conversation is happening inside a very narrow frame, one that makes total sense if you've never worked in engineering, and makes almost no sense if you have. This post is my attempt to bridge that gap. Not to push back on AI, not to gatekeep engineering, but to give business leaders a clearer picture of how engineering actually works so we can all get more out of it together.
+
+Let me get something out of the way upfront. I am not an AI skeptic. I use AI every single day across everything I do. It makes me a better engineer than I ever was. This is not a doomer post. This is about nuance, specifically the gap in understanding between business and engineering that AI has made way more visible. If you've ever looked at your engineering team and wondered why tickets take so long, this one's for you.
+
+---
+
+## Most Work Is Task-Based. Engineering Isn't.
+
+Think about how most departments operate. Sales has a pipeline. Operations has checklists. Even with AI tools like Claude Cowork, the unit of work is a task. You do it, you check it off, you move on. Faster execution almost always means better outcomes. The variance is small.
+
+Engineering is fundamentally different. Engineering follows the scientific method.
+
+<DiagramFigure
+  lightSrc="/assets/images/blog/scientific-method-light.svg"
+  darkSrc="/assets/images/blog/scientific-method-dark.svg"
+  alt="Flowchart showing the scientific method in engineering: Observe Problem, Research, Form Hypothesis, Plan and Design, Execute/Code, Collect Results, Iterate"
+  caption="Engineering follows the scientific method. Coding is just step E."
+/>
+
+The coding part? That's step E. For a senior engineer, that's roughly **20% of the actual work**. The other 80% is research, planning, designing the right solution, and then collecting and interpreting results. This is why "plan mode" in tools like Claude Code, Codex, and Gemini resonates so much with engineers. It mirrors how we actually think. And it's no coincidence that most best practices posts are really just about improving the feedback loop at the end.
+
+Here's the math that should stop you mid-sentence at your next planning meeting.
+
+<div className="my-8 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-6 text-center">
+
+**If coding is 20% of an engineer's job, a 50% speedup in coding is only a 10% total productivity gain.**
+
+</div>
+
+This isn't just intuition. It has a name. **Amdahl's Law** states that the speedup you get from optimizing one part of a system is limited by how much of the total work that part actually represents. If the sequential bottleneck is small, no amount of parallelization, or AI acceleration, changes the overall outcome much. AI can help with the other phases too, but most people aren't even framing it that way yet.
+
+---
+
+## What AI Is Actually Great For
+
+There's no shortage of articles about what AI does well so I won't rehash all of it. Here's where I actually find it valuable day to day:
+
+- **Rubber duck and scribe.** Thinking out loud with AI to process problems is underrated. It's like having a very patient, very knowledgeable colleague available at 2am.
+- **Kills activation energy.** Starting is the hardest part of most tasks. AI lowers that bar considerably.
+- **Documentation and tests.** The stuff engineers know they should write but hate writing. AI is great at this.
+- **Greenfield scaffolding.** Getting a project off the ground quickly. AI shines here.
+- **Writer's block.** Specs, RFCs, PRs, emails. AI handles the blank page problem well.
+
+AI is useful at every stage of the scientific method. The key word is *useful*, not *autonomous*. That distinction matters a lot.
+
+---
+
+## AI Makes the Most Common Decision, Not Necessarily the Best One
+
+These agentic coding tools (Claude Code, Codex, Gemini, and open source models like DeepSeek, Qwen, Gemma, and Llama) are impressive. For a brand new app with no prior context, they move fast. But here's what they're all doing: making the **most statistically common decision** for your situation, not the best one for *your* situation. They don't have your context. And your context is everything.
+
+This is where the **Dunning-Kruger Effect** shows up in conversations about AI. The people most confident that AI can just replace engineers tend to be the ones who use it the least in a real engineering context. The more you actually work with it day to day, the more you see its edges. It's not a knock on AI. It's just how expertise works.
+
+Here are real variables that shape engineering decisions that no LLM will ever know on its own:
+
+- You went to a conference and talked to a library maintainer who is shipping something in 6 weeks that makes your whole problem easier
+- A dependency you rely on just went unmaintained
+- A cloud provider or SaaS changed its pricing model after the model's training cutoff
+- Your team is strong at X and weak at Y, so you weight solutions differently
+- The "correct" solution would take 3 months. You need to ship in 3 weeks. So you pick the approach that's 80% right but lets you pivot cleanly later
+
+None of that is in the model. A senior engineer holds all of that in their head and navigates it constantly. That's not coding. That's judgment.
+
+This is also why, regardless of who or what wrote the code, **production PRs deserve the same review process.** If an agentic tool wrote a feature, it should go through the same scrutiny as if a junior engineer wrote it, because the model had the same blind spots a junior engineer would have. No organizational context, no awareness of the edge cases your team has learned the hard way, no understanding of the SLA implications of that one innocent-looking change. The code might look clean. That doesn't mean it's right for your system.
+
+---
+
+## The Variance Problem (And Why the 10x Engineer Is Real)
+
+For task-based roles, the variance in outcomes is fairly small. A good salesperson might close 2x more than an average one. For engineering, the variance is enormous. There are infinite ways to solve any problem, and you're relying on your engineers to navigate a multidimensional tradeoff space that reflects your company's values, constraints, and goals.
+
+This is why the term "10x engineer" exists. It's not mythological. **Price's Law** puts a number on it: roughly half of all output in any creative field comes from the square root of the total contributors. On a team of 25 engineers, about 5 of them are doing half the meaningful work. The difference between a great engineer and a mediocre one is genuinely that large on complex problems.
+
+And it cuts the other way too. There are engineers out there where the best possible outcome for your business is that they do nothing. Negative impact is real. The floor and ceiling are both extreme. When business instinct says "just hire more engineers to go faster," that's fighting against **Brooks's Law**: adding people to a late software project makes it later. The ramp-up cost, the communication overhead, the context transfer. It all slows the team down before it speeds it up, if it ever does. Engineers are expensive and hard to find, which makes the variance problem even more consequential. You're not hiring a commodity. You're hiring judgment.
+
+---
+
+## The Tacit Knowledge Problem
+
+When business people or agentic coders peer into an engineering codebase or process, they often hit a wall. Things that seem arbitrary. Decisions that aren't documented anywhere. Patterns that feel inconsistent. This is tacit knowledge: shared context that engineers carry culturally that never gets written down.
+
+Why doesn't it get written down? Two reasons:
+
+1. **Documentation ages.** Without constant maintenance, it drifts from reality fast. Outdated docs are often worse than no docs.
+2. **Maintaining docs is a full-time job.** One that generates zero revenue. It's hard to justify when there's a roadmap to ship.
+
+"Just have AI write it" is a reasonable reaction, but AI context windows are precious. Research has shown that the first 10-20% of a context window heavily influences the outcome of the entire session. Flooding it with documentation has real tradeoffs. This is still an evolving area but it's not a solved problem. The tacit knowledge gap is one of the biggest reasons engineering looks opaque from the outside. It's not gatekeeping. It's just how knowledge-dense work accumulates over time.
+
+---
+
+## Moving Fast Has a Hidden Balance Sheet
+
+"Producing the wrong thing fast" makes sense as a strategy. More attempts at product market fit means better odds of finding it. The logic is sound. What business doesn't see is the **engineering balance sheet on the other side**.
+
+Every attempt leaves behind maintenance cost and operations cost. Every feature built on a rushed foundation makes the next change more expensive. The cost of change compounds over time. Every engineering discipline you've ever heard of (design patterns, modularity, separation of concerns, abstraction) exists for exactly one reason: **to slow the growth of complexity.** Not eliminate it. Slow it. This is **Gall's Law** in practice: complex systems that work were always built from simpler systems that worked first. Skip the simple working foundation and you're building on sand.
+
+<DiagramFigure
+  lightSrc="/assets/images/blog/rushed-vs-thoughtful-light.svg"
+  darkSrc="/assets/images/blog/rushed-vs-thoughtful-dark.svg"
+  alt="Diagram comparing rushed decisions leading to unmanageable complexity versus thoughtful planning leading to team nimbleness"
+  caption="The hidden balance sheet: rushed decisions compound into existential risk."
+/>
+
+Even with great engineers doing everything right, complexity grows. The goal is to keep it logarithmic. Under deadline pressure, that growth rate goes up. Corners get cut, the foundation gets shakier with every sprint. At some point you hit a wall. Changes that used to take a week take a month. The codebase becomes so entangled that pivoting is nearly impossible. And if the market shifts at that moment, the business can't respond fast enough. **The company can die from its own technical debt.**
+
+This isn't theoretical. I've been laid off twice from startups where exactly this happened. The market shifted, engineering couldn't pivot fast enough, because of decisions made years earlier under pressure to move fast. Complexity is a fact of life in engineering unless you're truly throwing everything away and starting fresh. The only question is how fast it grows.
+
+---
+
+## Complexity Is a Sign of Success. It's Also a Trap.
+
+Every long-lived, successful codebase becomes extremely complicated, not because engineers were sloppy, but because **the reality it models is complicated.** Software that survives long enough is just a mirror of the real world. And the real world is messy.
+
+**Hyrum's Law** explains part of why this is so hard to change. With enough users, every observable behavior of your system, including the bugs, the quirks, the undocumented side effects, becomes something someone depends on. You can't just fix it. You have to manage it. This is why mature systems are so hard to refactor even when everyone agrees they should be.
+
+This connects directly to the Innovator's Dilemma. Pivoting fast is easy when you have nothing to lose. The more successful you become, the harder it gets:
+
+- Existing users who depend on current behavior
+- SLAs you're contractually obligated to hit
+- Integrations that break if you touch the wrong thing
+- Years of business logic baked into the codebase
+
+This is why scrappy startups can outmaneuver established players with a fraction of the resources. It's not that big companies are lazy or bureaucratic. Their engineering surface area is enormous and every change has blast radius. The cruel irony is that **success makes you slower.** Businesses that don't understand this get frustrated at exactly the wrong moment and push for pivots that engineering physically cannot deliver cleanly. Not because engineers are dragging their feet, but because the weight of all that prior success is sitting on top of every decision. Complexity isn't a failure. It's a consequence of survival.
+
+---
+
+## What Business Should Actually Push For
+
+The breathless AI posts are all about coding speed, and that makes sense. Coding is the hardest part for non-technical people. It's the most visible blocker when you don't have a technical background. But for engineers, coding is not the hard part. It never was. The hard parts are everything around it.
+
+<DiagramFigure
+  lightSrc="/assets/images/blog/engineering-time-light.svg"
+  darkSrc="/assets/images/blog/engineering-time-dark.svg"
+  alt="Pie chart showing engineering time distribution: Research 25%, Planning 20%, Architecture 15%, Coding 20%, Testing 10%, Iteration 10%"
+  caption="Where engineering time actually goes. Coding is only a fifth of it."
+/>
+
+<div className="my-8 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-6 text-center">
+
+**You think coding is the bottleneck because coding is *your* bottleneck. It isn't theirs.**
+
+</div>
+
+This is also where **Goodhart's Law** bites hard. When velocity or ticket throughput becomes the target, it stops being a good measure of actual progress. Teams optimize for the number, not the outcome. You get faster delivery of the wrong things, or shallower solutions to the right things. If you want to measure something meaningful, measure the quality of decisions made in the research phase and the signal coming back from the results phase. That's where the real work happens.
+
+**Protect the research phase.** Rushing engineers to "just start coding" often produces the wrong thing fast. And as we just covered, the wrong thing fast has compounding costs you won't feel until it's too late. Remember **Hofstadter's Law**: it always takes longer than you expect, even when you account for that fact. The research phase exists precisely to reduce that surprise. Cutting it doesn't save time. It defers the cost.
+
+**Invest in the feedback loop.** Observability, metrics, user research. The results collection phase is where you find out if you built the right thing at all. Most teams underinvest here badly.
+
+**Understand that slowing down to think is the job.** Not a delay. Not a blocker. The job.
+
+---
+
+## The Call to Action: Collaborate. Have the Conversations.
+
+The whole thesis of this post is that engineering follows the scientific method. Research, hypothesis, execution, results. That's the loop. And the single most important thing business can do is understand that loop and engage with it, especially at the beginning.
+
+Here's why the beginning matters so much. Scope reduction has the highest leverage in the research phase. If business and engineering sit down together before a single line of code is written, a 10-minute conversation about priorities can eliminate weeks of work. "We don't actually need this for v1" is worth infinitely more before the architecture is designed than after. Once you're in execution, changing scope means undoing decisions, rewriting code, and managing the complexity debt that's already accumulated. The earlier the conversation, the cheaper the tradeoff.
+
+**Conway's Law** tells us that organizations build systems that mirror their communication structure. If business and engineering are siloed, the product will reflect that silo: disconnected pieces that don't quite fit together, built by teams optimizing for their own side of the wall. The fix isn't a process change. It's a conversation change.
+
+The other place collaboration matters is at the results phase. Engineering needs to know if what shipped actually worked. Did users adopt it? Did it hit the business outcome it was supposed to hit? Without that signal, the next research phase starts blind. Business holds a lot of that signal and often doesn't realize engineering needs it to close the loop. Sharing outcomes isn't just a nice-to-have. It's what makes the scientific method actually function as a cycle instead of a one-way waterfall.
+
+So the ask is concrete: get in the room during research, align on outcomes before execution starts, and close the loop after results come in. I know everyone is slammed. But the ask is small relative to the cost of not doing it. The cost of that conversation is an hour. The cost of not having it could be months of building the wrong thing, compounding into technical debt that eventually boxes the business in entirely.
+
+---
+
+## Where This Leaves Us
+
+Agentic coding is here to stay. AI is here to stay. I use both constantly and I'm not arguing against either. I'm arguing for shared understanding.
+
+Engineers aren't slow. They're navigating tradeoffs you can't see, with context that isn't written down, in a problem space with enormous variance in outcomes. Every decision they make is either slowing or accelerating a complexity clock that will eventually come due. AI makes all of us better at this, but it doesn't replace the judgment. Not yet.
+
+The most valuable thing a business leader can do right now isn't push for faster coding. It's create the space for engineering to think, plan, and collaborate. That's where the real leverage is. And it starts with a conversation.
+
+---
+
+## Acknowledgements
+
+This blog post was written in collaboration with **Claude Sonnet 4.6**, Anthropic's AI assistant, which feels fitting given the subject matter.
+
+Here's how it actually came together. I dictated all of the core ideas, arguments, threads, and opinions across roughly **10 separate thought dumps** in a single conversation. Claude acted as scribe, organized the threads, suggested structure, workshopped the title (we went through about **15+ title variations** before landing on this one), and drafted the prose. I reviewed, pushed back, redirected, and added new material throughout.
+
+By the numbers:
+- **10 major idea threads** dictated by me across the conversation
+- **3 full draft iterations** of the post, plus **7 targeted section edits**
+- **9 engineering laws** researched and woven in from [The 20 Software Engineering Laws](https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws) by Dr. Milan Milanović
+- **1 title** that went through 4 distinct naming directions before clicking
+- **0 sentences** I would describe as pure AI filler. Every point in here came from my brain, Claude just helped me say it clearly
+
+The irony of using Claude to write a post about the limits of AI is not lost on me. But this is exactly the use case where AI shines: scribe, rubber duck, writer's block killer, and collaborative editor. The judgment, the opinions, the war stories, and the thesis are mine. Claude made sure they came out coherent.
+
+I'll also be honest: I was never a great writer. B's and C's in writing class growing up. The ideas were always there. Getting them out of my head and onto a page in a way that other people could follow was always the hard part. That's exactly the gap AI fills for me. It doesn't think for me. It just gets out of the way of my thinking.
+
+This is what the human + AI workflow actually looks like in practice. Not AI replacing the thinking. AI amplifying it.
