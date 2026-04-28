@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.606 0.25 292.717);
+  --primary-foreground: oklch(0.969 0.016 293.756);
+  --secondary: oklch(0.961 0.013 293.756);
+  --secondary-foreground: oklch(0.37 0.136 295.162);
+  --muted: oklch(0.967 0.003 264.542);
+  --muted-foreground: oklch(0.546 0.02 264.364);
+  --accent: oklch(0.961 0.013 293.756);
+  --accent-foreground: oklch(0.37 0.136 295.162);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.928 0.006 264.531);
+  --input: oklch(0.928 0.006 264.531);
+  --ring: oklch(0.606 0.25 292.717);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0.002 247.839);
+  --card: oklch(0.179 0.008 285.823);
+  --card-foreground: oklch(0.985 0.002 247.839);
+  --popover: oklch(0.179 0.008 285.823);
+  --popover-foreground: oklch(0.985 0.002 247.839);
+  --primary: oklch(0.702 0.183 293.541);
+  --primary-foreground: oklch(0.141 0.005 285.823);
+  --secondary: oklch(0.232 0.025 293.756);
+  --secondary-foreground: oklch(0.882 0.04 293.541);
+  --muted: oklch(0.232 0.025 293.756);
+  --muted-foreground: oklch(0.636 0.016 293.541);
+  --accent: oklch(0.232 0.025 293.756);
+  --accent-foreground: oklch(0.882 0.04 293.541);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.702 0.183 293.541);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Prose styles for blog content */
+  .prose {
+    @apply max-w-none text-foreground;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    @apply font-bold tracking-tight text-foreground;
+  }
+
+  .prose h2 {
+    @apply text-2xl mt-8 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl mt-6 mb-3;
+  }
+
+  .prose p {
+    @apply leading-7 mb-4 text-foreground/90;
+  }
+
+  .prose a {
+    @apply text-primary underline underline-offset-4 hover:text-primary/80;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary/50 pl-4 italic text-muted-foreground my-4;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside space-y-1 mb-4 text-foreground/90;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside space-y-1 mb-4 text-foreground/90;
+  }
+
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose img {
+    @apply rounded-lg my-4 max-w-full;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose table {
+    @apply w-full border-collapse mb-4;
+  }
+
+  .prose th,
+  .prose td {
+    @apply border border-border px-3 py-2 text-sm;
+  }
+
+  .prose th {
+    @apply bg-muted font-semibold;
+  }
+}

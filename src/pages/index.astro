@@ -1,0 +1,228 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+
+const recentPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+
+const proficient = ['Ruby', 'Java', 'C', 'JavaScript'];
+const familiar = ['Python', 'Scheme', 'Prolog', 'x86 Assembly', 'Haskell', 'Clojure'];
+const interests = [
+  'Hackathons', 'Project Euler', 'Running', 'Taekwondo',
+  'Video Games', 'Doctor Who', 'Sherlock', 'Pirozhki',
+];
+---
+
+<BaseLayout
+  title="Koushik Dasika — Hacker / Mathist Extraordinaire"
+  description="Full-stack developer, math nerd, and maker. Building things at the intersection of code and education."
+>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-12">
+
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="relative rounded-2xl border border-border bg-card overflow-hidden p-8 sm:p-12">
+        <!-- Gradient accent blob -->
+        <div
+          class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/10 blur-3xl pointer-events-none"
+          aria-hidden="true"
+        />
+        <div class="relative">
+          <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-medium mb-4">
+            👋 Hey there
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
+            Koushik Dasika
+          </h1>
+          <p class="text-xl text-muted-foreground mb-6">
+            Hacker &middot; Mathist Extraordinaire
+          </p>
+          <p class="text-foreground/80 leading-relaxed max-w-2xl mb-8">
+            Full-stack developer with a degree in math &amp; CS from Rutgers University (May 2012).
+            Primarily building with Ruby on Rails. I love writing code, solving problems, and learning
+            something new every day.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <Button asChild>
+              <a href="/projects">View Projects</a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="/assets/pdfs/KoushikDasikaWeb.pdf" target="_blank" rel="noopener noreferrer">
+                Resume ↗
+              </a>
+            </Button>
+            <Button variant="ghost" asChild>
+              <a href="https://github.com/KoushikDasika" target="_blank" rel="noopener noreferrer">
+                GitHub ↗
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
+      <!-- Left column -->
+      <div class="space-y-12">
+
+        <!-- About -->
+        <section>
+          <h2 class="text-2xl font-bold tracking-tight mb-4">About</h2>
+          <div class="space-y-4 text-foreground/80 leading-relaxed">
+            <p>
+              I am a full-stack developer who graduated from Rutgers University with a degree in
+              math and computer science. I primarily do Ruby on Rails development. My super power
+              is being able to write code — I love having the ability to solve real world problems
+              and create new things.
+            </p>
+            <ul class="space-y-1 list-disc list-inside text-foreground/70">
+              <li>I am pretty awesome</li>
+              <li>I am an outgoing and energetic person</li>
+              <li>I write code every day</li>
+              <li>I read code every day</li>
+              <li>I dream in code every day</li>
+            </ul>
+          </div>
+        </section>
+
+        <Separator />
+
+        <!-- Goals -->
+        <section>
+          <h2 class="text-2xl font-bold tracking-tight mb-4">Goals</h2>
+          <p class="text-foreground/80 leading-relaxed">
+            In 10 years, I plan to have my own startup. My passion is in education. Websites like
+            Coursera and Udemy are changing the way colleges distribute knowledge, but I feel that
+            the quality of textbooks is lacking. I have been a tutor for 2+ years, led recitations
+            for CS111 at Rutgers for 2 semesters, and have taught students from middle school to
+            Master's level in math and CS.
+          </p>
+          <p class="mt-4 text-foreground/80 leading-relaxed">
+            I found that all my students were very bright, but had difficulty because topics weren't
+            presented accessibly. Towards that end, I wrote my own 150-page Calculus I &amp; II
+            textbook for tutoring. I've also built <a href="/blog/learn-me-something" class="text-primary hover:underline underline-offset-4">LearnMeSomething</a> and
+            <a href="/projects#nowtutor" class="text-primary hover:underline underline-offset-4">NowTutor.Me</a> — both aimed at democratizing education.
+          </p>
+        </section>
+
+        <Separator />
+
+        <!-- Tech -->
+        <section>
+          <h2 class="text-2xl font-bold tracking-tight mb-4">Tech Stack</h2>
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm text-muted-foreground mb-2 uppercase tracking-wider font-medium">Proficient in</p>
+              <div class="flex flex-wrap gap-2">
+                {proficient.map((lang) => (
+                  <Badge variant="default">{lang}</Badge>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p class="text-sm text-muted-foreground mb-2 uppercase tracking-wider font-medium">Also written</p>
+              <div class="flex flex-wrap gap-2">
+                {familiar.map((lang) => (
+                  <Badge variant="outline">{lang}</Badge>
+                ))}
+              </div>
+            </div>
+            <div class="mt-4 text-sm text-muted-foreground space-y-1">
+              <p>OS: Ubuntu 12.10 64-bit</p>
+              <p>Editor: TMUX + VIM</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right sidebar -->
+      <aside class="space-y-6">
+
+        <!-- Recent Posts -->
+        <div class="rounded-xl border border-border p-5 bg-card">
+          <h2 class="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">
+            Recent Posts
+          </h2>
+          <ul class="space-y-4">
+            {recentPosts.map((post) => {
+              const formatted = new Intl.DateTimeFormat('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+              }).format(post.data.date);
+              return (
+                <li>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="text-sm font-medium hover:text-primary transition-colors"
+                  >
+                    {post.data.title}
+                  </a>
+                  <p class="text-xs text-muted-foreground mt-0.5">{formatted}</p>
+                </li>
+              );
+            })}
+          </ul>
+          <a
+            href="/blog"
+            class="block mt-4 text-xs text-primary hover:underline underline-offset-4"
+          >
+            All posts →
+          </a>
+        </div>
+
+        <!-- Interests -->
+        <div class="rounded-xl border border-border p-5 bg-card">
+          <h2 class="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">
+            Interests
+          </h2>
+          <ul class="space-y-1.5">
+            {interests.map((item) => (
+              <li class="text-sm text-foreground/80 flex items-center gap-2">
+                <span class="w-1 h-1 rounded-full bg-primary inline-block" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Connect -->
+        <div class="rounded-xl border border-border p-5 bg-card">
+          <h2 class="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">
+            Connect
+          </h2>
+          <div class="space-y-2">
+            <a
+              href="https://github.com/KoushikDasika"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+            >
+              <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              @KoushikDasika
+            </a>
+            <a
+              href="mailto:kdasika@koushikdasika.com"
+              class="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+            >
+              <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              kdasika@koushikdasika.com
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

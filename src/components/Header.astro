@@ -1,0 +1,24 @@
+---
+import Nav from './Nav';
+import ThemeToggle from './ThemeToggle';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-sm">
+  <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between relative">
+    <a href="/" class="flex flex-col leading-tight group">
+      <span class="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+        Koushik Dasika
+      </span>
+      <span class="text-xs text-muted-foreground hidden sm:block">
+        Hacker / Mathist Extraordinaire
+      </span>
+    </a>
+
+    <div class="flex items-center gap-3">
+      <Nav currentPath={currentPath} client:load />
+      <ThemeToggle client:load />
+    </div>
+  </div>
+</header>

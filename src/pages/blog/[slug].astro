@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { Badge } from '@/components/ui/badge';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formatted = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(post.data.date);
+---
+
+<BaseLayout title={`${post.data.title} — Koushik Dasika`} description={post.data.description}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <article>
+      <header class="mb-8">
+        <div class="flex flex-wrap gap-2 mb-3">
+          {post.data.categories?.map((cat) => (
+            <Badge variant="secondary">{cat}</Badge>
+          ))}
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3">
+          {post.data.title}
+        </h1>
+        <p class="text-muted-foreground text-sm">
+          Posted on <time datetime={post.data.date.toISOString()}>{formatted}</time>
+          {' '}by Koushik Dasika
+        </p>
+      </header>
+
+      <div class="prose dark:prose-invert">
+        <Content />
+      </div>
+
+      <footer class="mt-12 pt-6 border-t border-border">
+        <a
+          href="/blog"
+          class="text-primary hover:underline underline-offset-4 text-sm"
+        >
+          ← Back to Blog
+        </a>
+      </footer>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
