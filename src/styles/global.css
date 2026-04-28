@@ -93,15 +93,19 @@
   }
 
   .prose h2 {
-    @apply text-2xl mt-8 mb-4;
+    @apply text-2xl mt-14 mb-6;
   }
 
   .prose h3 {
-    @apply text-xl mt-6 mb-3;
+    @apply text-xl mt-10 mb-4;
   }
 
   .prose p {
-    @apply leading-7 mb-4 text-foreground/90;
+    @apply leading-8 mb-6 text-foreground/90;
+  }
+
+  .prose hr {
+    @apply my-12 border-border/50;
   }
 
   .prose a {
@@ -109,15 +113,15 @@
   }
 
   .prose blockquote {
-    @apply border-l-4 border-primary/50 pl-4 italic text-muted-foreground my-4;
+    @apply border-l-4 border-primary/50 pl-4 italic text-muted-foreground my-8;
   }
 
   .prose ul {
-    @apply list-disc list-inside space-y-1 mb-4 text-foreground/90;
+    @apply list-disc list-inside space-y-2 mb-6 text-foreground/90;
   }
 
   .prose ol {
-    @apply list-decimal list-inside space-y-1 mb-4 text-foreground/90;
+    @apply list-decimal list-inside space-y-2 mb-6 text-foreground/90;
   }
 
   .prose code {
