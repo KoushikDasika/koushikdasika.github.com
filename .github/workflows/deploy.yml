@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [claude/migrate-jekyll-to-astro-kZubM]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -25,11 +25,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to master
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: master
-          force_orphan: false
+          publish_branch: gh-pages
+          force_orphan: true
           commit_message: "Deploy: ${{ github.sha }}"

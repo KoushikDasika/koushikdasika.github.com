@@ -6,3 +6,5 @@ dist/
 .DS_Store
 *.log
 .astro/
+# Deployed build artifacts (root-level output from peaceiris/actions-gh-pages)
+_astro/
