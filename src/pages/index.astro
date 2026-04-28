@@ -11,17 +11,20 @@ const recentPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 5);
 
-const proficient = ['Ruby', 'Java', 'C', 'JavaScript'];
-const familiar = ['Python', 'Scheme', 'Prolog', 'x86 Assembly', 'Haskell', 'Clojure'];
-const interests = [
-  'Hackathons', 'Project Euler', 'Running', 'Taekwondo',
-  'Video Games', 'Doctor Who', 'Sherlock', 'Pirozhki',
-];
+const techStack = {
+  'Languages': ['Elixir', 'JavaScript', 'TypeScript', 'Ruby', 'Python'],
+  'Other Languages': ['Java', 'C', 'Golang'],
+  'Frameworks': ['Phoenix', 'React', 'Node.js', 'Ruby on Rails'],
+  'Infrastructure': ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'EKS'],
+  'Data': ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Kafka', 'Elasticsearch', 'OpenSearch', 'Redis'],
+  'Practices': ['Event Sourcing', 'CI/CD', 'Agile', 'Infrastructure as Code'],
+};
+const interests = ['Baking', 'Running', 'AI/ML'];
 ---
 
 <BaseLayout
-  title="Koushik Dasika — Hacker / Mathist Extraordinaire"
-  description="Full-stack developer, math nerd, and maker. Building things at the intersection of code and education."
+  title="Koushik Dasika — Hacker, Builder, Engineering Leader"
+  description="Engineering leader with 13+ years building and scaling teams, platforms, and products. Currently leading engineering at Automatiq."
 >
   <Header />
   <main class="max-w-5xl mx-auto px-4 py-12">
@@ -42,21 +45,17 @@ const interests = [
             Koushik Dasika
           </h1>
           <p class="text-xl text-muted-foreground mb-6">
-            Hacker &middot; Mathist Extraordinaire
+            Hacker &middot; Builder &middot; Engineering Leader
           </p>
           <p class="text-foreground/80 leading-relaxed max-w-2xl mb-8">
-            Full-stack developer with a degree in math &amp; CS from Rutgers University (May 2012).
-            Primarily building with Ruby on Rails. I love writing code, solving problems, and learning
-            something new every day.
+            Engineering leader with 13+ years of experience building software, scaling infrastructure,
+            and growing teams. Currently leading a team of 13 engineers at Automatiq, where we're
+            building AI-powered features and shipping across marketplace, payments, and white-label
+            ticketing products.
           </p>
           <div class="flex flex-wrap gap-3">
             <Button asChild>
-              <a href="/projects">View Projects</a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="/assets/pdfs/KoushikDasikaWeb.pdf" target="_blank" rel="noopener noreferrer">
-                Resume ↗
-              </a>
+              <a href="/blog">Read the Blog</a>
             </Button>
             <Button variant="ghost" asChild>
               <a href="https://github.com/KoushikDasika" target="_blank" rel="noopener noreferrer">
@@ -77,38 +76,42 @@ const interests = [
           <h2 class="text-2xl font-bold tracking-tight mb-4">About</h2>
           <div class="space-y-4 text-foreground/80 leading-relaxed">
             <p>
-              I am a full-stack developer who graduated from Rutgers University with a degree in
-              math and computer science. I primarily do Ruby on Rails development. My super power
-              is being able to write code — I love having the ability to solve real world problems
-              and create new things.
+              I've spent the last 13+ years building software and leading engineering teams across
+              startups in NYC. I started as a hands-on full-stack engineer and grew through Staff
+              and Principal roles before moving into engineering leadership — but I've never stopped
+              writing code.
             </p>
-            <ul class="space-y-1 list-disc list-inside text-foreground/70">
-              <li>I am pretty awesome</li>
-              <li>I am an outgoing and energetic person</li>
-              <li>I write code every day</li>
-              <li>I read code every day</li>
-              <li>I dream in code every day</li>
-            </ul>
+            <p>
+              I'm at my best when I'm building high-performing teams, designing systems that scale,
+              and solving hard infrastructure problems. I've migrated entire platforms to Kubernetes,
+              built real-time inventory systems with Kafka and event sourcing, and helped teams ship
+              faster by investing in tooling, CI/CD, and engineering culture.
+            </p>
+            <p>
+              I also love teaching. Earlier in my career, I tutored for years, led CS recitations at
+              Rutgers, and even wrote my own 150-page calculus textbook. That instinct to share
+              knowledge still shows up in how I lead — through mentorship, skillshares, and making
+              sure everyone on the team is growing.
+            </p>
           </div>
         </section>
 
         <Separator />
 
-        <!-- Goals -->
+        <!-- What I'm Focused On -->
         <section>
-          <h2 class="text-2xl font-bold tracking-tight mb-4">Goals</h2>
+          <h2 class="text-2xl font-bold tracking-tight mb-4">What I'm Focused On</h2>
           <p class="text-foreground/80 leading-relaxed">
-            In 10 years, I plan to have my own startup. My passion is in education. Websites like
-            Coursera and Udemy are changing the way colleges distribute knowledge, but I feel that
-            the quality of textbooks is lacking. I have been a tutor for 2+ years, led recitations
-            for CS111 at Rutgers for 2 semesters, and have taught students from middle school to
-            Master's level in math and CS.
+            At Automatiq, I lead engineering across three product areas — our B2B marketplace,
+            Instant Sites (white-label ticketing storefronts), and Payments infrastructure. I'm
+            currently driving our AI-powered feature roadmap, including semantic search, LLM-based
+            catalog enrichment, and MCP server integrations.
           </p>
           <p class="mt-4 text-foreground/80 leading-relaxed">
-            I found that all my students were very bright, but had difficulty because topics weren't
-            presented accessibly. Towards that end, I wrote my own 150-page Calculus I &amp; II
-            textbook for tutoring. I've also built <a href="/blog/learn-me-something" class="text-primary hover:underline underline-offset-4">LearnMeSomething</a> and
-            <a href="/projects#nowtutor" class="text-primary hover:underline underline-offset-4">NowTutor.Me</a> — both aimed at democratizing education.
+            Beyond shipping features, I focus on the fundamentals that make teams effective:
+            infrastructure optimization (we cut AWS spend by 60% while scaling to 40%+ more traffic),
+            hiring and onboarding great engineers, and building the processes that help everyone
+            do their best work.
           </p>
         </section>
 
@@ -118,26 +121,17 @@ const interests = [
         <section>
           <h2 class="text-2xl font-bold tracking-tight mb-4">Tech Stack</h2>
           <div class="space-y-4">
-            <div>
-              <p class="text-sm text-muted-foreground mb-2 uppercase tracking-wider font-medium">Proficient in</p>
-              <div class="flex flex-wrap gap-2">
-                {proficient.map((lang) => (
-                  <Badge variant="default">{lang}</Badge>
-                ))}
+            {Object.entries(techStack).map(([category, items]) => (
+              <div>
+                <p class="text-sm text-muted-foreground mb-2 uppercase tracking-wider font-medium">{category}</p>
+                <div class="flex flex-wrap gap-2">
+                  {items.map((item) => (
+                    <Badge variant={category === 'Languages' || category === 'Frameworks' ? 'default' : 'outline'}>{item}</Badge>
+
+                  ))}
+                </div>
               </div>
-            </div>
-            <div>
-              <p class="text-sm text-muted-foreground mb-2 uppercase tracking-wider font-medium">Also written</p>
-              <div class="flex flex-wrap gap-2">
-                {familiar.map((lang) => (
-                  <Badge variant="outline">{lang}</Badge>
-                ))}
-              </div>
-            </div>
-            <div class="mt-4 text-sm text-muted-foreground space-y-1">
-              <p>OS: Ubuntu 12.10 64-bit</p>
-              <p>Editor: TMUX + VIM</p>
-            </div>
+            ))}
           </div>
         </section>
       </div>
