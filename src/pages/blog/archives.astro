@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+// Group by year
+const byYear = posts.reduce<Record<number, typeof posts>>((acc, post) => {
+  const year = post.data.date.getFullYear();
+  (acc[year] ??= []).push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+---
+
+<BaseLayout title="Archives — Koushik Dasika" description="All blog posts grouped by year.">
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold tracking-tight mb-8">Archives</h1>
+
+    <div class="space-y-10">
+      {years.map((year) => (
+        <section>
+          <h2 class="text-xl font-semibold text-muted-foreground mb-4 pb-2 border-b border-border">
+            {year}
+          </h2>
+          <ul class="space-y-4">
+            {byYear[year].map((post) => {
+              const formatted = new Intl.DateTimeFormat('en-US', {
+                month: 'short',
+                day: 'numeric',
+              }).format(post.data.date);
+              return (
+                <li class="flex items-baseline gap-4">
+                  <span class="text-sm text-muted-foreground w-16 shrink-0">{formatted}</span>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="hover:text-primary transition-colors font-medium"
+                  >
+                    {post.data.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
