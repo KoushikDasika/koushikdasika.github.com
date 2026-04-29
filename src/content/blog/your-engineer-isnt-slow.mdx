@@ -70,17 +70,19 @@ Here are real variables that shape engineering decisions that no LLM will ever k
 
 None of that is in the model. A senior engineer holds all of that in their head and navigates it constantly. That's not coding. That's judgment.
 
+No two projects are alike because the context is always different. But projects rhyme. That's the trap — the surface looks familiar, so shortcuts feel safe, until the context underneath diverges and the decision falls apart.
+
 This is also why, regardless of who or what wrote the code, **production PRs deserve the same review process.** If an agentic tool wrote a feature, it should go through the same scrutiny as if a junior engineer wrote it, because while the model may have many of the same blind spots as a junior engineer, it also has technically unique blind spots as well: no organizational context, no awareness of the edge cases your team has learned the hard way, no understanding of the SLA implications of that one innocent-looking change. The code might look clean. That doesn't mean it's right for your system.
 
 ---
 
 ## The Variance Problem (And Why the 10x Engineer Is Real)
 
-For task-based roles, the variance in outcomes is fairly small. A good salesperson might close 2x more than an average one. For engineering, the variance is enormous. There are infinite ways to solve any problem, and you're relying on your engineers to navigate a multidimensional tradeoff space that reflects your company's values, constraints, and goals.
+For task-based roles, the variance in outcomes is fairly small. A good salesperson might close 2x more than an average one. For engineering, the variance is enormous. There are infinite ways to solve any problem, and you're relying on your engineers to navigate a multidimensional tradeoff space that reflects your company's values, constraints, and goals. No two engineers have the same skills — the dimensions are too many: frontend, backend, databases, eye for design, people skills, domain knowledge, system intuition. Every engineer is a unique combination of all of these.
 
 This is why the term "10x engineer" exists. It's not mythological. **Price's Law** puts a number on it: roughly half of all output in any creative field comes from the square root of the total contributors. On a team of 25 engineers, about 5 of them are doing half the meaningful work. The difference between a great engineer and a mediocre one is genuinely that large on complex problems.
 
-And it cuts the other way too. There are engineers out there where the best possible outcome for your business is that they do nothing. Negative impact is real. The floor and ceiling are both extreme. When business instinct says "just hire more engineers to go faster," that's fighting against **Brooks's Law**: adding people to a late software project makes it later. The ramp-up cost, the communication overhead, the context transfer. It all slows the team down before it speeds it up, if it ever does. Engineers are expensive and hard to find, which makes the variance problem even more consequential. You're not hiring a commodity. You're hiring judgment.
+And it cuts the other way too. There are engineers out there where the best possible outcome for your business is that they do nothing. Negative impact is real. The -10x engineer is just as real as the 10x engineer. The floor and ceiling are both extreme. When business instinct says "just hire more engineers to go faster," that's fighting against **Brooks's Law**: adding people to a late software project makes it later. The ramp-up cost, the communication overhead, the context transfer. It all slows the team down before it speeds it up, if it ever does. Engineers are expensive and hard to find, which makes the variance problem even more consequential. You're not hiring a commodity. You're hiring judgment.
 
 ---
 
@@ -101,7 +103,7 @@ Why doesn't it get written down? Two reasons:
 
 "Producing the wrong thing fast" makes sense as a strategy. More attempts at product market fit means better odds of finding it. The logic is sound. What business doesn't see is the **engineering balance sheet on the other side**.
 
-Every attempt leaves behind maintenance cost and operations cost. Every feature built on a rushed foundation makes the next change more expensive. The cost of change compounds over time. Every engineering discipline you've ever heard of (design patterns, modularity, separation of concerns, abstraction) exists for exactly one reason: **to slow the growth of complexity.** Not eliminate it. Slow it. This is **Gall's Law** in practice: complex systems that work were always built from simpler systems that worked first. Skip the simple working foundation and you're building on sand.
+Every attempt leaves behind maintenance cost and operations cost. Every feature built on a rushed foundation makes the next change more expensive. The cost of change compounds over time. Every engineering discipline you've ever heard of (design patterns, frameworks, modularity, separation of concerns, abstraction) exists for exactly one reason: **to slow the growth of complexity.** Not eliminate it. Slow it. This is **Gall's Law** in practice: complex systems that work were always built from simpler systems that worked first. Skip the simple working foundation and you're building on sand.
 
 <DiagramFigure
   lightSrc="/assets/images/blog/rushed-vs-thoughtful-light.svg"
@@ -146,7 +148,7 @@ The breathless AI posts are all about coding speed, and that makes sense. Coding
 
 <div className="my-8 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-6 text-center">
 
-**You think coding is the bottleneck because coding is *your* bottleneck. It isn't theirs.**
+**You think coding is the bottleneck because coding is *your* bottleneck. It isn't Engineering's.**
 
 </div>
 
@@ -160,7 +162,7 @@ This is also where **Goodhart's Law** bites hard. When velocity or ticket throug
 
 ---
 
-## The Call to Action: Collaborate. Have the Conversations.
+## The Call to Action: Collaborate in the Process. Have the Conversations.
 
 The whole thesis of this post is that engineering follows the scientific method. Research, hypothesis, execution, results. That's the loop. And the single most important thing business can do is understand that loop and engage with it, especially at the beginning.
 
@@ -186,13 +188,13 @@ The most valuable thing a business leader can do right now isn't push for faster
 
 ## Acknowledgements
 
-This blog post was written in collaboration with **Claude Sonnet 4.6**, Anthropic's AI assistant, which feels fitting given the subject matter.
+This blog post was written in collaboration with **Claude Sonnet 4.6**, Anthropic's AI assistant, which feels fitting given the subject matter. There are tells this was written by AI — constructions like "Not X, it's Y" and an abundance of em-dashes. I considered editing them out, but decided to keep them in: LLM acceptance was the whole point of the post.
 
 Here's how it actually came together. I dictated all of the core ideas, arguments, threads, and opinions across roughly **10 separate thought dumps** in a single conversation. Claude acted as scribe, organized the threads, suggested structure, workshopped the title (we went through about **15+ title variations** before landing on this one), and drafted the prose. I reviewed, pushed back, redirected, and added new material throughout.
 
 By the numbers:
 - **10 major idea threads** dictated by me across the conversation
-- **3 full draft iterations** of the post, plus **7 targeted section edits**
+- **3 full draft iterations** of the post, plus **14 targeted section edits**
 - **9 engineering laws** researched and woven in from *The 20 Software Engineering Laws* by Dr. Milan Milanović <a href="#cite-3">[3]</a>
 - **1 title** that went through 4 distinct naming directions before clicking
 - **0 sentences** I would describe as pure AI filler. Every point in here came from my brain, Claude just helped me say it clearly
