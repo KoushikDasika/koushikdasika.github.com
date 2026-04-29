@@ -32,11 +32,15 @@ Here's the math that should stop you mid-sentence at your next planning meeting.
 
 <div className="my-8 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-6 text-center">
 
-**If coding is 20% of an engineer's job, a 50% speedup in coding is only a 10% total productivity gain.**
+**If coding is 20% of an engineer's job, a 50% speedup in coding yields only about a 7% total productivity gain.**
 
 </div>
 
-This isn't just intuition — it's known as **Amdahl's Law**. This law states that the speedup you get from optimizing one part of a system is limited by how much of the total work that part actually represents. If the sequential bottleneck is small, no amount of parallelization, or AI acceleration, changes the overall outcome much. AI can help with the other phases too, but most people aren't even framing it that way yet.
+This isn't just intuition — it's known as **Amdahl's Law**. The formula: `S = 1 / ((1 − p) + p/s)`, where `p` is the fraction of work being sped up and `s` is the speedup factor. Plug in coding as 20% of the job (`p = 0.20`) and a 50% speedup (`s = 1.5`):
+
+`S = 1 / (0.80 + 0.20/1.5) = 1 / 0.933 ≈ 1.07`
+
+A 7% overall gain. Not 10. Not 50. Seven. This law states that the speedup you get from optimizing one part of a system is limited by how much of the total work that part actually represents. If the bottleneck is small, no amount of AI acceleration changes the overall outcome much. AI can help with the other phases too, but most people aren't even framing it that way yet.
 
 ---
 
