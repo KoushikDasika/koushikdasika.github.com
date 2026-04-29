@@ -5,14 +5,16 @@ categories: ["Engineering Leadership", "AI", "Software Engineering"]
 description: "What I wish every business leader knew about AI and LLMs — why coding is only 20% of the work, and where the real leverage is."
 ---
 
-import DiagramFigure from '@/components/DiagramFigure';
-import ScientificMethodDiagram from '@/components/ScientificMethodDiagram';
+import DiagramFigure from "@/components/DiagramFigure";
+import ScientificMethodDiagram from "@/components/ScientificMethodDiagram";
 
 ### What I Wish Every Business Leader Knew About AI and LLMs
 
 ---
 
-![Engineer not slow](https://i.redd.it/eatm1afqmj3g1.png)
+![Code](https://www.commitstrip.com/wp-content/uploads/2016/08/Strip-Les-specs-cest-du-code-650-finalenglish.jpg)
+
+<p className="text-center text-sm text-muted-foreground mt-2">Image credit: <a href="https://www.commitstrip.com/en/2016/08/25/a-very-comprehensive-and-precise-spec/" target="_blank" rel="noopener noreferrer">CommitStrip</a></p>
 
 ---
 
@@ -22,7 +24,7 @@ Let me get something out of the way upfront. I am not an AI skeptic. I use AI ev
 
 ---
 
-## Most Work Is Task-Based. Engineering Isn't.
+## Most Work Is Task-Based. Engineering Isn't
 
 Think about how most departments operate. Sales has a pipeline. Operations has checklists. Even with AI tools like Claude Cowork, the unit of work is a task. You do it, you check it off, you move on. Faster execution almost always means better outcomes. The variance is small.
 
@@ -61,13 +63,13 @@ There's no shortage of articles about what AI does well so I won't rehash all of
 - **Writer's block.** Specs, RFCs, PRs, emails. AI handles the blank page problem well.
 - **Raises the floor on your weaknesses.** Where you're strong, its shortcomings are easy to see. Where you're weak, it trivially lifts you to at least median level. This is actually what's driving most of the excitement around AI — and it's something engineers and experts need to lean into. Work has many dimensions. Focus on your strengths, let AI shore up the rest, and you're operating at a higher level overall. (This post exists because I can't write. I had opinions. Claude had sentences.)
 
-AI is useful at every stage of the scientific method. The key word is *useful*, not *autonomous*. That distinction matters a lot.
+AI is useful at every stage of the scientific method. The key word is _useful_, not _autonomous_. That distinction matters a lot.
 
 ---
 
 ## AI Makes the Most Common Decision, Not Necessarily the Best One
 
-These agentic coding tools (Claude Code, Codex, Gemini, and open source models like DeepSeek, Qwen, Gemma, and Llama) are impressive. For a brand new app with no prior context, they move fast. But here's what they're all doing: making the **most statistically common decision** for your situation, not the best one for *your* situation. They don't have your context. And your context is everything.
+These agentic coding tools (Claude Code, Codex, Gemini, and open source models like DeepSeek, Qwen, Gemma, and Llama) are impressive. For a brand new app with no prior context, they move fast. But here's what they're all doing: making the **most statistically common decision** for your situation, not the best one for _your_ situation. They don't have your context. And your context is everything.
 
 There's a pattern worth naming in conversations about AI. The people most confident that AI can just replace engineers tend to be the ones who use it the least in a real engineering context. The more you actually work with it day to day, the more you see its edges. It's not a knock on AI. It's just how expertise works.
 
@@ -129,7 +131,7 @@ This isn't theoretical. I've been laid off twice from startups where exactly thi
 
 ---
 
-## Complexity Is a Sign of Success. It's Also a Trap.
+## Complexity Is a Sign of Success. It's Also a Trap
 
 Every long-lived, successful codebase becomes extremely complicated, not because engineers were sloppy, but because **the reality it models is complicated.** Software that survives long enough is just a mirror of the real world. And the real world is messy.
 
@@ -159,7 +161,7 @@ The breathless AI posts are all about coding speed, and that makes sense. Coding
 
 <div className="my-8 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-6 text-center">
 
-**You think coding is the bottleneck because coding is *your* bottleneck. It isn't Engineering's.**
+**You think coding is the bottleneck because coding is _your_ bottleneck. It isn't Engineering's.**
 
 </div>
 
@@ -169,11 +171,11 @@ This is also where **Goodhart's Law** bites hard. When velocity or ticket throug
 
 **Invest in the feedback loop.** Observability, metrics, user research. The results collection phase is where you find out if you built the right thing at all. Most teams underinvest here badly.
 
-**Optimize for the medium term.** The instinct to push for faster execution makes sense in the short term, but planning — timeboxed and kept within reason — rarely causes problems and prevents them far more often than not. There is a reason the military saying *slow is smooth, smooth is fast* has survived as long as it has. Taking the time to move deliberately through the research and planning phases is not lost time. It is the thing that makes execution fast when it counts.
+**Optimize for the medium term.** The instinct to push for faster execution makes sense in the short term, but planning — timeboxed and kept within reason — rarely causes problems and prevents them far more often than not. There is a reason the military saying _slow is smooth, smooth is fast_ has survived as long as it has. Taking the time to move deliberately through the research and planning phases is not lost time. It is the thing that makes execution fast when it counts.
 
 ---
 
-## The Call to Action: Collaborate in the Process. Have the Conversations.
+## The Call to Action: Collaborate in the Process. Have the Conversations
 
 The whole thesis of this post is that engineering follows the scientific method. Research, hypothesis, execution, results. That's the loop. And the single most important thing business can do is understand that loop and engage with it, especially at the beginning.
 
@@ -210,9 +212,10 @@ This blog post was written in collaboration with **Claude Sonnet 4.6**, Anthropi
 Here's how it actually came together. I dictated all of the core ideas, arguments, threads, and opinions across roughly **10 separate thought dumps** in a single conversation. Claude acted as scribe, organized the threads, suggested structure, workshopped the title (we went through about **15+ title variations** before landing on this one), and drafted the prose. I reviewed, pushed back, redirected, and added new material throughout.
 
 By the numbers:
+
 - **10 major idea threads** dictated by me across the conversation
 - **3 full draft iterations** of the post, plus **30 targeted section edits**
-- **9 engineering laws** researched and woven in from *The 20 Software Engineering Laws* by Dr. Milan Milanović <a href="#cite-3">[3]</a>
+- **9 engineering laws** researched and woven in from _The 20 Software Engineering Laws_ by Dr. Milan Milanović <a href="#cite-3">[3]</a>
 - **1 title** that went through 4 distinct naming directions before clicking
 - **0 sentences** I would describe as pure AI filler. Every point in here came from my brain, Claude just helped me say it clearly
 
@@ -226,8 +229,19 @@ This is what the human + AI workflow actually looks like in practice. Not AI rep
 
 ## Citations
 
-<span id="cite-1">**[1]**</span> METR (2025). [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/). Randomized controlled trial with 16 experienced open-source developers across 246 tasks. ([arXiv](https://arxiv.org/abs/2507.09089)) ([HN discussion](https://news.ycombinator.com/item?id=44522772))
+<span id="cite-1">**[1]**</span> METR (2025). [Measuring the Impact of
+Early-2025 AI on Experienced Open-Source Developer
+Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/).
+Randomized controlled trial with 16 experienced open-source developers across
+246 tasks. ([arXiv](https://arxiv.org/abs/2507.09089)) ([HN
+discussion](https://news.ycombinator.com/item?id=44522772))
 
-<span id="cite-2">**[2]**</span> Liu, N., Lin, K., Hewitt, J., et al. (2024). [Lost in the Middle: How Language Models Use Long Contexts](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long). *Transactions of the Association for Computational Linguistics, 12*, 157–173. ([HN discussion](https://news.ycombinator.com/item?id=46828936))
+<span id="cite-2">**[2]**</span> Liu, N., Lin, K., Hewitt, J., et al. (2024).
+[Lost in the Middle: How Language Models Use Long
+Contexts](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long).
+_Transactions of the Association for Computational Linguistics, 12_, 157–173.
+([HN discussion](https://news.ycombinator.com/item?id=46828936))
 
-<span id="cite-3">**[3]**</span> Milanović, M. [The 20 Software Engineering Laws](https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws). *Tech World with Milan*.
+<span id="cite-3">**[3]**</span> Milanović, M. [The 20 Software Engineering
+Laws](https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws).
+_Tech World with Milan_.
