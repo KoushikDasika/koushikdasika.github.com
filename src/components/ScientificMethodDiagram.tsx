@@ -15,12 +15,12 @@ const GAP = 3.5;
 const SEGMENT = (360 - 7 * GAP) / 7;
 
 const steps: Step[] = [
-  { lines: ["Observe", "Problem"], letter: "A", id: "a" },
+  { lines: ["Identify", "Problem"], letter: "A", id: "a" },
   { lines: ["Research"], letter: "B", id: "b" },
   { lines: ["Form", "Hypothesis"], letter: "C", id: "c" },
   { lines: ["Plan &", "Design"], letter: "D", id: "d" },
   { lines: ["Execute /", "Code"], letter: "E", id: "e", highlight: true },
-  { lines: ["Collect", "Results"], letter: "F", id: "f" },
+  { lines: ["Deploy &", "Measure"], letter: "F", id: "f" },
   { lines: ["Iterate"], letter: "G", id: "g" },
 ];
 
