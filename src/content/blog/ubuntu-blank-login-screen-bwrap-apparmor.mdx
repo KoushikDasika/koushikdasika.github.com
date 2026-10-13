@@ -1,0 +1,67 @@
+---
+title: "My Sandbox Broke My Login Screen (NVIDIA Was Innocent This Time)"
+date: 2026-10-13
+categories: ["Linux", "Debugging"]
+description: "A blank GNOME login screen on Ubuntu that looked like an NVIDIA driver problem and turned out to be two AppArmor profiles attached to bwrap."
+---
+
+I've been building a harness that uses bubblewrap (`bwrap`) to run commands safely on the host machine. Partway through, my laptop stopped showing a login screen. Ubuntu 26.04, GNOME 50, and gdm came up blank.
+
+Here's what I tried and what came back.
+
+## The red herring
+
+The laptop has an RTX 5090. A blank display manager is exactly what you get when you install an incompatible NVIDIA driver on a 5000 series Blackwell card, so that's where I went first.
+
+I swapped drivers a few times and got the same blank screen every time. That took about 30 minutes, and I'm still on 595 as a souvenir.
+
+I also disabled my GNOME extensions. No change.
+
+## What was actually wrong
+
+The kernel log had it:
+
+```
+info="conflicting profile attachments" name="/usr/bin/bwrap"
+```
+
+It was triggered from inside gnome-shell by `gly-hdl-loader`, a loader thread from glycin, which is GNOME's image loading library. glycin runs its loaders inside `bwrap`. Ubuntu restricts unprivileged user namespaces through AppArmor, so `bwrap` needs a profile that allows them.
+
+I had two profiles attached to `/usr/bin/bwrap`. One was `bwrap-userns-restrict`, which had been copied into `/etc/apparmor.d/`. The other was `hooray-bwrap`, the one my harness uses.
+
+AppArmor won't choose between two profiles for the same binary. glycin's sandbox ran with no profile and got blocked. GNOME couldn't load any icons and the login screen crashed.
+
+So the thing I broke while building a sandbox was the sandbox my desktop uses to look at icons.
+
+## The fix
+
+Keep one profile. I kept `hooray-bwrap` and moved the other one out:
+
+```bash
+sudo mkdir -p /root/apparmor-backup
+sudo mv /etc/apparmor.d/bwrap-userns-restrict /root/apparmor-backup/
+sudo apparmor_parser -R /root/apparmor-backup/bwrap-userns-restrict
+sudo apparmor_parser -r /etc/apparmor.d/hooray-bwrap
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=1
+sudo systemctl restart gdm3
+```
+
+The first try failed on a typo (`mkdir -b` where `-p` belonged). The second try brought the login screen back with the userns restriction still on.
+
+## Is it secure?
+
+The harness depends on `hooray-bwrap`, so the next question was whether that profile is any good.
+
+The profile is `flags=(unconfined)` with a `userns,` rule. It lets `bwrap` create namespaces and restricts nothing. It applies to every user and every program that calls `/usr/bin/bwrap`, and I can't narrow it to the harness because glycin needs it too. That's the same default Fedora, Arch and Debian ship, which I can live with on a single-user laptop.
+
+All of the isolation has to come from the flags the harness passes to `bwrap`: `--unshare-all`, `--disable-userns`, `--cap-drop ALL`, `--die-with-parent`, `--new-session`, `--clearenv`, read-only system binds, and no host sockets.
+
+That's now a checklist with escape tests, plus a hard rule to leave `/etc/apparmor.d/` alone. Auditing the harness against it is next.
+
+`bwrap-userns-restrict` is still sitting in `/root/apparmor-backup/`. It stays there for as long as `hooray-bwrap` exists.
+
+If you get a blank GNOME login screen on Ubuntu, check this before you touch your GPU drivers:
+
+```bash
+journalctl -k -b | grep -i "conflicting profile"
+```
